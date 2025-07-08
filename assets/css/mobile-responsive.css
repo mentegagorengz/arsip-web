@@ -1,0 +1,358 @@
+/* Mobile Responsive CSS for SiArsip */
+
+/* General Mobile Styles */
+@media (max-width: 768px) {
+    /* Body and Container */
+    body {
+        font-size: 14px;
+    }
+    
+    .container, .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Tables */
+    .table-responsive {
+        border: none;
+        font-size: 12px;
+    }
+    
+    .table-responsive table {
+        min-width: 100% !important;
+    }
+    
+    .table-responsive th,
+    .table-responsive td {
+        padding: 8px 4px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin: 2px;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .btn-group .btn {
+        flex: 1;
+        margin: 2px;
+    }
+    
+    /* Forms */
+    .form-control {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-row .col-md-6 {
+        margin-bottom: 10px;
+    }
+    
+    /* Cards and Panels */
+    .card, .panel {
+        margin-bottom: 15px;
+    }
+    
+    .card-header, .panel-heading {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .card-body, .panel-body {
+        padding: 15px;
+    }
+    
+    /* Modals */
+    .modal-dialog {
+        margin: 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        padding: 15px;
+    }
+    
+    /* Breadcrumbs */
+    .breadcome-area {
+        padding: 15px;
+    }
+    
+    .breadcome-list h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .breadcome-list p {
+        font-size: 12px;
+    }
+    
+    /* Data Tables */
+    .data-table-area {
+        padding: 15px;
+    }
+    
+    .dataTables_wrapper {
+        font-size: 12px;
+    }
+    
+    .dataTables_length select {
+        padding: 4px 8px;
+    }
+    
+    .dataTables_filter input {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .dataTables_info {
+        font-size: 11px;
+    }
+    
+    .dataTables_paginate {
+        font-size: 12px;
+    }
+    
+    /* Alerts */
+    .alert {
+        padding: 10px 15px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    /* Navigation */
+    .navbar-nav {
+        margin: 0;
+    }
+    
+    .navbar-nav li {
+        margin-bottom: 5px;
+    }
+    
+    /* Statistics Cards */
+    .analytics-sparkle-line {
+        margin-bottom: 15px;
+    }
+    
+    .analytics-content {
+        padding: 15px;
+    }
+    
+    .analytics-content h5 {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    
+    .analytics-content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    /* File Upload */
+    .file-upload-area {
+        padding: 15px;
+    }
+    
+    .file-upload-inner {
+        padding: 20px;
+    }
+    
+    /* Profile Section */
+    .profile-info {
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .profile-info img {
+        max-width: 100px;
+        height: auto;
+    }
+    
+    /* Footer */
+    .main-footer {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .main-footer .float-right {
+        float: none !important;
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+/* Extra Small Mobile Styles */
+@media (max-width: 480px) {
+    /* Body */
+    body {
+        font-size: 13px;
+    }
+    
+    /* Container */
+    .container, .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* Tables */
+    .table-responsive {
+        font-size: 10px;
+    }
+    
+    .table-responsive th,
+    .table-responsive td {
+        padding: 6px 3px;
+        font-size: 10px;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .btn-lg {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Forms */
+    .form-control {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    
+    /* Cards */
+    .card-body, .panel-body {
+        padding: 10px;
+    }
+    
+    /* Modals */
+    .modal-dialog {
+        margin: 5px;
+        max-width: calc(100% - 10px);
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 10px;
+    }
+    
+    /* Breadcrumbs */
+    .breadcome-area {
+        padding: 10px;
+    }
+    
+    .breadcome-list h2 {
+        font-size: 16px;
+    }
+    
+    .breadcome-list p {
+        font-size: 11px;
+    }
+    
+    /* Data Tables */
+    .data-table-area {
+        padding: 10px;
+    }
+    
+    .dataTables_wrapper {
+        font-size: 10px;
+    }
+    
+    /* Statistics Cards */
+    .analytics-content {
+        padding: 10px;
+    }
+    
+    .analytics-content h5 {
+        font-size: 12px;
+    }
+    
+    .analytics-content h2 {
+        font-size: 20px;
+    }
+}
+
+/* Landscape Mobile Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .left-sidebar-pro {
+        width: 200px;
+    }
+    
+    .left-sidebar-pro.active {
+        left: 0;
+    }
+    
+    .mobile-menu-toggle {
+        top: 10px;
+        left: 10px;
+        padding: 6px;
+    }
+}
+
+/* Touch-friendly elements */
+@media (max-width: 768px) {
+    /* Make touch targets larger */
+    .btn, .form-control, .dropdown-toggle {
+        min-height: 44px;
+    }
+    
+    /* Improve tap targets */
+    .table-responsive a,
+    .table-responsive button {
+        padding: 8px 12px;
+        margin: 2px;
+    }
+    
+    /* Better spacing for touch */
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    /* Larger checkboxes and radio buttons */
+    input[type="checkbox"],
+    input[type="radio"] {
+        transform: scale(1.2);
+        margin: 5px;
+    }
+}
+
+/* Print styles for mobile */
+@media print {
+    .mobile-menu-toggle,
+    .mobile-overlay,
+    .mobile-close-btn {
+        display: none !important;
+    }
+    
+    .left-sidebar-pro {
+        position: static !important;
+        left: auto !important;
+        width: auto !important;
+    }
+    
+    .all-content-wrapper {
+        margin-left: 0 !important;
+    }
+}
