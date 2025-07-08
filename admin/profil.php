@@ -24,6 +24,17 @@
     </div>
 </div>
 
+<!-- Button Kembali -->
+<div class="container-fluid" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="index.php" class="btn btn-secondary">
+                <i class="fa fa-arrow-left"></i> Kembali
+            </a>
+        </div>
+    </div>
+</div>
+
 <div class="product-sales-area mg-tb-30">
     <div class="container-fluid">
         <div class="row">
