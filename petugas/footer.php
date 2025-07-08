@@ -1,4 +1,3 @@
-
 <!-- Footer Section -->
 <footer class="main-footer text-sm" style="background-color: #B22222; color: white; padding: 10px 20px; margin-top: 20px;">
     <div class="container-fluid">
@@ -15,12 +14,24 @@
 
 <!-- Footer Styles -->
 <style>
+    body {
+        margin-bottom: 70px; /* Add space at bottom to prevent content being hidden behind sticky footer */
+    }
+    
     .main-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
         display: block;
         unicode-bidi: isolate;
         border-top: 1px solid #dee2e6;
         color: #6c757d;
         font-size: 0.875rem;
+        background-color: #B22222 !important;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     }
     
     .main-footer strong {
@@ -47,6 +58,10 @@
         
         .main-footer {
             text-align: center;
+        }
+        
+        body {
+            margin-bottom: 90px; /* Increase bottom margin for mobile */
         }
     }
 </style>
@@ -82,14 +97,12 @@
 <script src="../assets/js/main.js"></script>
 
 <script src="../assets/js/DataTables/datatables.js"></script>
-
-
 <script src="../assets/js/pdf/jquery.media.js"></script>
 <script src="../assets/js/pdf/pdf-active.js"></script>
 
 <script type="text/javascript">
-	$(document).ready( function () {
-		$('.table-datatable').DataTable({
+    $(document).ready( function () {
+        $('.table-datatable').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
             },
@@ -97,51 +110,104 @@
             "autoWidth": false
         });
 
+        Morris.Area({
+            element: 'extra-area-chart',
+            data: [
 
-		Morris.Area({
-			element: 'extra-area-chart',
-			data: [
+            <?php 
+            $dateBegin = strtotime("first day of this month");  
+            $dateEnd = strtotime("last day of this month");
 
-			<?php 
-			$dateBegin = strtotime("first day of this month");  
-			$dateEnd = strtotime("last day of this month");
+            $awal = date("Y/m/d", $dateBegin);         
+            $akhir = date("Y/m/d", $dateEnd);
 
-			$awal = date("Y/m/d", $dateBegin);         
-			$akhir = date("Y/m/d", $dateEnd);
+            $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat WHERE date(riwayat_waktu) >= '$awal' AND date(riwayat_waktu) <= '$akhir'");
+            while($p = mysqli_fetch_array($arsip)){
+                $tgl = date('Y/m/d',strtotime($p['riwayat_waktu']));
+                $jumlah = mysqli_query($koneksi,"select * from riwayat where date(riwayat_waktu)='$tgl'");
+                $j = mysqli_num_rows($jumlah);
+                ?>
+                {
+                    period: '<?php echo date('Y-m-d',strtotime($p['riwayat_waktu'])) ?>',
+                    Unduh: <?php echo $j ?>,
+                },
+                <?php 
+            }
+            ?>
 
-			$arsip = mysqli_query($koneksi,"SELECT * FROM riwayat WHERE date(riwayat_waktu) >= '$awal' AND date(riwayat_waktu) <= '$akhir'");
-			while($p = mysqli_fetch_array($arsip)){
-				$tgl = date('Y/m/d',strtotime($p['riwayat_waktu']));
-				$jumlah = mysqli_query($koneksi,"select * from riwayat where date(riwayat_waktu)='$tgl'");
-				$j = mysqli_num_rows($jumlah);
-				?>
-				{
-					period: '<?php echo date('Y-m-d',strtotime($p['riwayat_waktu'])) ?>',
-					Unduh: <?php echo $j ?>,
-				},
-				<?php 
-			}
-			?>
+            ],
+            xkey: 'period',
+            ykeys: ['Unduh'],
+            labels: ['Unduh'],
+            xLabels: 'day',
+            xLabelAngle: 45,
+            pointSize: 3,
+            fillOpacity: 0,
+            pointStrokeColors:['#006DF0'],
+            behaveLikeLine: true,
+            gridLineColor: '#e0e0e0',
+            lineWidth: 1,
+            hideHover: 'auto',
+            lineColors: ['#006DF0'],
+            resize: true
 
-			],
-			xkey: 'period',
-			ykeys: ['Unduh'],
-			labels: ['Unduh'],
-			xLabels: 'day',
-			xLabelAngle: 45,
-			pointSize: 3,
-			fillOpacity: 0,
-			pointStrokeColors:['#006DF0'],
-			behaveLikeLine: true,
-			gridLineColor: '#e0e0e0',
-			lineWidth: 1,
-			hideHover: 'auto',
-			lineColors: ['#006DF0'],
-			resize: true
-
-		});
-	});
+        });
+    });
 </script>
+
+<script>
+    // Mobile Menu Toggle Functions
+    function toggleMobileMenu() {
+        const sidebar = document.querySelector('.left-sidebar-pro');
+        const overlay = document.querySelector('.mobile-overlay');
+        const closeBtn = document.querySelector('.mobile-close-btn');
+        
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        if (window.innerWidth <= 768) {
+            closeBtn.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+        }
+    }
+    
+    function closeMobileMenu() {
+        const sidebar = document.querySelector('.left-sidebar-pro');
+        const overlay = document.querySelector('.mobile-overlay');
+        const closeBtn = document.querySelector('.mobile-close-btn');
+        
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        closeBtn.style.display = 'none';
+    }
+    
+    // Close mobile menu when clicking on menu items
+    document.querySelectorAll('.left-sidebar-menu-pro a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                closeMobileMenu();
+            }
+        });
+    });
+    
+    // Show/hide mobile menu button based on screen size
+    function checkScreenSize() {
+        const toggleBtn = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.left-sidebar-pro');
+        
+        if (window.innerWidth > 768) {
+            toggleBtn.style.display = 'none';
+            sidebar.classList.remove('active');
+            document.querySelector('.mobile-overlay').classList.remove('active');
+        } else {
+            toggleBtn.style.display = 'block';
+        }
+    }
+    
+    // Check screen size on load and resize
+    window.addEventListener('load', checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
+</script>
+
 </body>
 
 </html>

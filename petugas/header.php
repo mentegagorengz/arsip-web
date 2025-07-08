@@ -31,6 +31,19 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
 
+    <style>
+        /* Show navbar on desktop, hide on mobile */
+        .desktop-navbar {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-navbar {
+                display: none !important;
+            }
+        }
+    </style>
+
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
     <?php 
@@ -41,6 +54,9 @@
     }
     ?>
 </head>
+
+
+
 <body>
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 50px;">
@@ -96,10 +112,12 @@
     </div>
     
     <div class="all-content-wrapper">
-            <div class="navbar navbar-light" style="background-color: #CD5C5C;">
+        
+        <div class="header-advance-area">
+            <div class="navbar navbar-light desktop-navbar" style="background-color: #B22222;">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                  
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
                                     <div class="col-lg-1 col-md-0 col-sm-12 col-xs-12">
@@ -112,43 +130,37 @@
                                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link"> Aplikasi Pengarsipan</a></li>
+                                                <li class="nav-item"><a href="#" class="nav-link">Aplikasi Pengarsipan</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-
-                                            <li class="nav-item">
-                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                    <?php 
-                                                    $id_petugas = $_SESSION['id'];
-                                                    $profil = mysqli_query($koneksi,"select * from user where user_id='$id_petugas'");
-                                                    $profil = mysqli_fetch_assoc($profil);
-                                                    if($profil['user_foto'] == ""){ 
-                                                      ?>
-                                                      <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
-                                                  <?php }else{ ?>
-                                                    <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
-                                                <?php } ?>
-                                                <span class="admin-name"><?php echo $_SESSION['nama']; ?> [ <b>Petugas</b> ]</span>
-                                                <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
-                                            </a>
-                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                <li><a href="profil.php"><span class="edu-icon edu-home-admin author-log-ic"></span>Profil Saya</a></li>
-                                               
+                                                <li class="nav-item">
+                                                    <a href="profil.php" class="nav-link">
+                                                        <?php 
+                                                        $id_admin = $_SESSION['id'];
+                                                        $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
+                                                        $profil = mysqli_fetch_assoc($profil);
+                                                        if($profil['user_foto'] == ""){ 
+                                                            ?>
+                                                            <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                                        <?php }else{ ?>
+                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
+                                                        <?php } ?>
+                                                        <span class="admin-name"><?php echo $_SESSION['nama']; ?> [ <b>Petugas</b> ]</span>
+                                                    </a>
+                                                </li>
                                             </ul>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-    </div>
     <!-- Mobile Menu start -->
     <div class="mobile-menu-area" style="background-color: #B22222;">
         <div class="container">
@@ -182,7 +194,21 @@
                                 <li>
                                     <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
                                 </li>
-
+                                <li>
+                                    <a href="profil.php" aria-expanded="false">
+                                        <?php 
+                                        $id_admin = $_SESSION['id'];
+                                        $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
+                                        $profil = mysqli_fetch_assoc($profil);
+                                        if($profil['user_foto'] == ""){ 
+                                            ?>
+                                            <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                        <?php }else{ ?>
+                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
+                                        <?php } ?>
+                                        <span class="mini-click-non"><?php echo $_SESSION['nama']; ?> [ <b>Petugas</b> ]</span>
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
                                 </li>
