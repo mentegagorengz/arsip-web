@@ -1,5 +1,5 @@
 <!-- Footer Section -->
-<footer class="main-footer text-sm" style="background-color: #B22222; color: white; padding: 10px 20px; margin-top: 20px;">
+<footer class="main-footer text-sm" style="background-color: #404040; color: white; padding: 10px 20px; margin-top: 20px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -14,12 +14,24 @@
 
 <!-- Footer Styles -->
 <style>
+    body {
+        margin-bottom: 70px; /* Add space at bottom to prevent content being hidden behind sticky footer */
+    }
+    
     .main-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
         display: block;
         unicode-bidi: isolate;
         border-top: 1px solid #dee2e6;
         color: #6c757d;
         font-size: 0.875rem;
+        background-color: #404040 !important;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     }
     
     .main-footer strong {
@@ -46,6 +58,10 @@
         
         .main-footer {
             text-align: center;
+        }
+        
+        body {
+            margin-bottom: 90px; /* Increase bottom margin for mobile */
         }
     }
 </style>
@@ -118,6 +134,49 @@
             "responsive": true,
             "autoWidth": false
         });
+
+        // Initialize Morris Chart if element exists
+        if (document.getElementById('extra-area-chart')) {
+            Morris.Area({
+                element: 'extra-area-chart',
+                data: [
+                <?php 
+                $dateBegin = strtotime("first day of this month");  
+                $dateEnd = strtotime("last day of this month");
+
+                $awal = date("Y/m/d", $dateBegin);         
+                $akhir = date("Y/m/d", $dateEnd);
+
+                $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat WHERE date(riwayat_waktu) >= '$awal' AND date(riwayat_waktu) <= '$akhir'");
+                while($p = mysqli_fetch_array($arsip)){
+                    $tgl = date('Y/m/d',strtotime($p['riwayat_waktu']));
+                    $jumlah = mysqli_query($koneksi,"select * from riwayat where date(riwayat_waktu)='$tgl'");
+                    $j = mysqli_num_rows($jumlah);
+                    ?>
+                    {
+                        period: '<?php echo date('Y-m-d',strtotime($p['riwayat_waktu'])) ?>',
+                        Unduh: <?php echo $j ?>,
+                    },
+                    <?php 
+                }
+                ?>
+                ],
+                xkey: 'period',
+                ykeys: ['Unduh'],
+                labels: ['Unduh'],
+                xLabels: 'day',
+                xLabelAngle: 45,
+                pointSize: 3,
+                fillOpacity: 0,
+                pointStrokeColors:['#006DF0'],
+                behaveLikeLine: true,
+                gridLineColor: '#e0e0e0',
+                lineWidth: 1,
+                hideHover: 'auto',
+                lineColors: ['#006DF0'],
+                resize: true
+            });
+        }
     });
 </script>
 

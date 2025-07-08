@@ -31,6 +31,17 @@
     <link rel="stylesheet" href="../assets/css/mobile-responsive.css">
     
     <style>
+        /* Show navbar on desktop, hide on mobile */
+        .desktop-navbar {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-navbar {
+                display: none !important;
+            }
+        }
+        
         /* Mobile Responsive Styles for User Panel */
         @media (max-width: 768px) {
             .left-sidebar-pro {
@@ -155,7 +166,7 @@
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="header-advance-area">
-            <div class="navbar navbar-light" style="background-color: #404040;">
+            <div class="navbar navbar-light desktop-navbar" style="background-color: #404040;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -237,11 +248,11 @@
                                                     $profil = mysqli_fetch_assoc($profil);
                                                     if($profil['user_foto'] == ""){ 
                                                         ?>
-                                                        <img src="../gambar/sistem/user.png">
+                                                        <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
                                                         <?php 
                                                     }else{ 
                                                         ?>
-                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>">
+                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
                                                         <?php 
                                                     } 
                                                     ?>
@@ -249,8 +260,8 @@
                                                     <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                                 </a>
                                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                    <li><a href="profil.php"><span class="edu-icon edu-money author-log-ic"></span>Profil</a></li>
-                                                   
+                                                    <li><a href="profil.php"><span class="edu-icon edu-home-admin author-log-ic"></span>Profil Saya</a></li>
+                                                    <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Logout</a></li>
                                                 </ul>
                                             </li>
 
@@ -264,7 +275,7 @@
             </div>
         </div>
         <!-- Mobile Menu start -->
-        <div class="mobile-menu-area " style="background-color: #d80027;">
+        <div class="mobile-menu-area" style="background-color: #404040;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -284,6 +295,22 @@
 
                                     <li>
                                         <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="profil.php" aria-expanded="false">
+                                            <?php 
+                                            $id_user = $_SESSION['id'];
+                                            $profil = mysqli_query($koneksi,"select * from user where user_id='$id_user'");
+                                            $profil = mysqli_fetch_assoc($profil);
+                                            if($profil['user_foto'] == ""){ 
+                                                ?>
+                                                <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                            <?php }else{ ?>
+                                            <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
+                                            <?php } ?>
+                                            <span class="mini-click-non"><?php echo $_SESSION['nama']; ?> [ <b>User</b> ]</span>
+                                        </a>
                                     </li>
 
                                     <li>
