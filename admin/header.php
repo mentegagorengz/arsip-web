@@ -57,11 +57,12 @@
 <body>
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 50px;">
-            <div class="sidebar-header">
-                <a href="index.html"><img src="../assets/img/logo/logo.png" alt="" /></a>
+            <div class="sidebar-header" style="background blue">
+                <a href="index.php">
+                    <img src="../assets/img/logo/logo.png" alt="Logo" class="img-responsive" style="width: 100%; max-width: 150px; height: auto;" />
+                </a>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
-
                 <nav class="sidebar-nav left-sidebar-menu-pro" style="margin-top: 30px">
 
                     <ul class="metismenu" id="menu1">
@@ -121,8 +122,10 @@
                                 <div class="row">
                                     <div class="col-lg-1 col-md-0 col-sm-12 col-xs-12">
                                         <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-                                                <i class="educate-icon educate-nav"></i>
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #d80027; border: none;">
+                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
                                             </button>
                                         </div>
                                     </div>
@@ -170,7 +173,7 @@
                             <ul class="mobile-menu-nav">
                                 <li class="active">
                                     <a href="index.php">
-                                        <span class="educate-icon educate-home icon-wrap"></span>
+
                                         <span class="mini-click-non">Dashboard</span>
                                     </a>
                                 </li>

@@ -60,10 +60,11 @@
 <body>
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 50px;">
-            <div class="sidebar-header">
-                <a href="index.html"><img src="../assets/img/logo/logo.png" alt="" /></a>
+            <div class="sidebar-header" style="background blue">
+                <a href="index.php">
+                    <img src="../assets/img/logo/logo.png" alt="Logo" class="img-responsive" style="width: 100%; max-width: 150px; height: auto;" />
+                </a>
             </div>
-            <div class="left-custom-menu-adp-wrap comment-scrollbar">
 
                 <nav class="sidebar-nav left-sidebar-menu-pro" style="margin-top: 30px">
 
