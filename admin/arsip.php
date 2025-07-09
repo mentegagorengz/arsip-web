@@ -73,9 +73,8 @@
                     <?php 
                     include '../koneksi.php';
                     $no = 1;
-                    $arsip = mysqli_query($koneksi,"SELECT * FROM arsip LEFT JOIN kategori ON arsip.arsip_kategori=kategori.kategori_id LEFT JOIN user ON arsip.arsip_petugas=user.user_id ORDER BY arsip_id DESC");
+                    $arsip = mysqli_query($koneksi,"SELECT arsip.*, kategori.kategori_nama, user.user_nama as petugas_nama, user_pengirim.user_nama as pengirim_nama FROM arsip LEFT JOIN kategori ON arsip.arsip_kategori=kategori.kategori_id LEFT JOIN user ON arsip.arsip_petugas=user.user_id LEFT JOIN user AS user_pengirim ON arsip.arsip_user=user_pengirim.user_id ORDER BY arsip_id DESC");
                     while($p = mysqli_fetch_array($arsip)){
-                        $user = mysqli_fetch_assoc(mysqli_query($koneksi,"SELECT * FROM user WHERE user_id=" . $p['arsip_id']));
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
@@ -88,8 +87,8 @@
 
                             </td>
                             <td><?php echo $p['kategori_nama'] ?></td>
-                            <td><?php echo $p['user_nama'] ?></td>
-                            <td><?php echo $p['user_nama'] ?></td>
+                            <td><?php echo $p['pengirim_nama'] ? $p['pengirim_nama'] : 'N/A' ?></td>
+                            <td><?php echo $p['petugas_nama'] ? $p['petugas_nama'] : 'N/A' ?></td>
                             <td><?php echo $p['arsip_keterangan'] ?></td>
                             <td>
                                 <div style="display:flex; justify-content: center;">
