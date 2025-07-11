@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Register User | Aplikasi Pengarsipan</title>
+    <title>Daftar Pengguna | Aplikasi Pengarsipan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -38,18 +38,18 @@
 
                 <br>
 
-                <p>Silahkan login untuk mengakses arsip.</p>
+                <p>Silahkan daftar untuk mengakses arsip.</p>
 
             </div>
             <div class="content-error">
                 <?php
                 if (isset($_GET['alert'])) {
                     if ($_GET['alert'] == "gagal") {
-                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
+                        echo "<div class='alert alert-danger'>DAFTAR GAGAL! NAMA PENGGUNA DAN KATA SANDI SALAH!</div>";
                     } else if ($_GET['alert'] == "logout") {
-                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
+                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL KELUAR</div>";
                     } else if ($_GET['alert'] == "belum_login") {
-                        echo "<div class='alert alert-warning'>ANDA HARUS LOGIN UNTUK MENGAKSES DASHBOARD</div>";
+                        echo "<div class='alert alert-warning'>ANDA HARUS MASUK UNTUK MENGAKSES DASBOR</div>";
                     }
                 }
                 ?>
@@ -59,7 +59,7 @@
                         <br>
                         <br>
                         <center>
-                            <h4>REGISTER USER</h4>
+                            <h4>DAFTAR PENGGUNA</h4>
                         </center>
                         <br>
                         <br>
@@ -67,15 +67,15 @@
                         <form action="periksa_user_register.php" method="POST" id="loginForm">
                             <div class="form-group">
                                 <label class="control-label" for="name">Nama</label>
-                                <input type="text" placeholder="name" title="Please enter you name" required="required" autocomplete="off" name="name" id="name" class="form-control">
+                                <input type="text" placeholder="nama" title="Silakan masukkan nama Anda" required="required" autocomplete="off" name="name" id="name" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="username" title="Please enter you username" required="required" autocomplete="off" name="username" id="username" class="form-control">
+                                <label class="control-label" for="username">Nama Pengguna</label>
+                                <input type="text" placeholder="nama pengguna" title="Silakan masukkan nama pengguna Anda" required="required" autocomplete="off" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
+                                <label class="control-label" for="password">Kata Sandi</label>
+                                <input type="password" title="Silakan masukkan kata sandi Anda" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
                             </div>
 
                             <!-- <div class="form-group">
@@ -83,7 +83,7 @@
                                 <input type="file" name="foto">
                             </div> -->
 
-                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Register">
+                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Daftar">
                         </form>
 
                         <br>
@@ -91,8 +91,8 @@
                     </div>
                 </div>
                 <br>
-                <a href="user_login.php">Login</a>
-                <a href="index.php">Home</a>
+                <a href="user_login.php">Masuk</a>
+                <a href="index.php">Beranda</a>
                 <br>
             </div>
            

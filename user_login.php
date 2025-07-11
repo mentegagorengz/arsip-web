@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login User | Aplikasi Pengarsipan</title>
+    <title>Masuk Pengguna | Aplikasi Pengarsipan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -40,20 +40,20 @@
 
                     <br>
 
-                    <p>Silahkan login untuk mengakses arsip.</p>
+                    <p>Silahkan masuk untuk mengakses arsip.</p>
                 </div>
             </div>
             <div class="content-error">
                 <?php 
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "gagal"){
-                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
+                        echo "<div class='alert alert-danger'>MASUK GAGAL! NAMA PENGGUNA DAN KATA SANDI SALAH!</div>";
                     }else if($_GET['alert'] == "registered"){
-                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL MEMBUAT USERBARU, SILAHKAN LOGIN KEMBALI</div>";
+                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL MEMBUAT PENGGUNA BARU, SILAHKAN MASUK KEMBALI</div>";
                     }else if($_GET['alert'] == "logout"){
-                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
+                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL KELUAR</div>";
                     }else if($_GET['alert'] == "belum_login"){
-                        echo "<div class='alert alert-warning'>ANDA HARUS LOGIN UNTUK MENGAKSES DASHBOARD</div>";
+                        echo "<div class='alert alert-warning'>ANDA HARUS MASUK UNTUK MENGAKSES DASBOR</div>";
                     }
                 }
                 ?>
@@ -63,22 +63,22 @@
                         <br>
                         <br>
                         <center>
-                            <h4>LOGIN USER</h4>    
+                            <h4>MASUK PENGGUNA</h4>    
                         </center>
                         <br>
                         <br>
 
                         <form action="periksa_user_login.php" method="POST" id="loginForm">
                             <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="username" title="Please enter you username" required="required" autocomplete="off" name="username" id="username" class="form-control">
+                                <label class="control-label" for="username">Nama Pengguna</label>
+                                <input type="text" placeholder="nama pengguna" title="Silakan masukkan nama pengguna Anda" required="required" autocomplete="off" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
+                                <label class="control-label" for="password">Kata Sandi</label>
+                                <input type="password" title="Silakan masukkan kata sandi Anda" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
                             </div>
 
-                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Login">
+                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Masuk">
                         </form>
 
                         <br>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <br>
-                <a href="user_register.php">Register</a>
+                <a href="user_register.php">Daftar</a>
                 <a href="index.php">Kembali</a>
                 <br>
             </div>

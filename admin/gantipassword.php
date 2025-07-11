@@ -24,6 +24,15 @@
     </div>
 </div>
 
+<!-- Button Kembali -->
+<div class="container-fluid" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="arsip.php" class="btn btn-sm btn-kategori"><i class="fa fa-arrow-left"></i> Kembali</a>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">

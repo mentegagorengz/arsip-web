@@ -63,11 +63,11 @@
                                 <?php 
                                 if($p['user_foto'] == ""){
                                     ?>
-                                    <img class="img-user" src="../gambar/sistem/user.png">
+                                    <img class="img-user" src="../gambar/sistem/user.png" style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;">
                                     <?php
                                 }else{
                                     ?>
-                                    <img class="img-user" src="../gambar/user/<?php echo $p['user_foto']; ?>">
+                                    <img class="img-user" src="../gambar/user/<?php echo $p['user_foto']; ?>" style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;">
                                     <?php
                                 }
                                 ?>

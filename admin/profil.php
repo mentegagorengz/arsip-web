@@ -36,9 +36,7 @@
 <div class="product-sales-area mg-tb-30">
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-lg-3">
-
                 <?php 
                 $id = $_SESSION['id'];
                 $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
@@ -46,7 +44,6 @@
                 ?>
                 <div class="single-cards-item">
                     
-
                     <div class="profile-card">
                     <?php 
                     $id = $_SESSION['id'];
@@ -71,11 +68,9 @@
                     </div>
                 </div>
                 </div>
-
             </div>
 
             <div class="col-lg-6">
-
                 <?php 
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "sukses"){
@@ -83,7 +78,6 @@
                     }
                 }
                 ?>
-
                 <div class="panel">
                     <div class="panel-heading">
                         <h4>Data Diri</h4>

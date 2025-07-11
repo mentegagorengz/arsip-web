@@ -114,7 +114,7 @@
                         <li class="<?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
                             <a href="index.php">
                                 <span class="educate-icon educate-home icon-wrap"></span>
-                                <span class="mini-click-non">Dashboard</span>
+                                <span class="mini-click-non">Dasbor</span>
                             </a>
                         </li>
 
@@ -122,10 +122,10 @@
                             <a href="arsip.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Arsip Saya</span></a>
                         </li>
                         <li class="<?php echo ($current_page == 'arsip_masuk.php') ? 'active' : ''; ?>">
-                            <a href="arsip_masuk.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Document Masuk</span></a>
+                            <a href="arsip_masuk.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Dokumen Masuk</span></a>
                         </li>
                         <li class="<?php echo ($current_page == 'arsip_keluar.php') ? 'active' : ''; ?>">
-                            <a href="arsip_keluar.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Document Keluar</span></a>
+                            <a href="arsip_keluar.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Dokumen Keluar</span></a>
                         </li>
 
                         <li class="<?php echo ($current_page == 'kategori.php') ? 'active' : ''; ?>">
@@ -133,7 +133,7 @@
                         </li>
 
                         <li class="<?php echo ($current_page == 'user.php') ? 'active' : ''; ?>">
-                            <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data User</span></a>
+                            <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Pengguna</span></a>
                         </li>
 
                         <li class="<?php echo ($current_page == 'riwayat.php') ? 'active' : ''; ?>">
@@ -146,7 +146,7 @@
                         </li>
 
                         <li>
-                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
+                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Keluar</span></a>
                         </li>
 
                     </ul>
