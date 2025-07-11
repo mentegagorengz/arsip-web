@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>User - Aplikasi Pengarsipan</title>
+    <title>Pengguna - Aplikasi Pengarsipan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -153,7 +153,7 @@
                             </li>
                            
                             <li>
-                                <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
+                                <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Keluar</span></a>
                             </li>
 
                         </ul>
@@ -173,20 +173,21 @@
                                 <div class="row">
                                     <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
                                         <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #fff">
-                                                <i class="educate-icon educate-nav" ></i>
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #404040; border: none;">
+                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                                                <li class="nav-item"><a href="arsip.php" class="nav-link">Semua Arsip</a></li>
+                                                <li class="nav-item"><a href="index.php" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Beranda</a></li>
+                                                <li class="nav-item"><a href="arsip.php" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Semua Arsip</a></li>
                                                 <li class="nav-item dropdown res-dis-nn">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Kategori <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Kategori <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                     <div role="menu" class="dropdown-menu animated zoomIn">
-
                                                      <?php 
                                                      $no = 1;
                                                      $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
@@ -194,12 +195,11 @@
                                                         ?>
                                                         <a href="arsip.php?kategori=<?php echo $p['kategori_id'] ?>" class="dropdown-item"><?php echo $p['kategori_nama'] ?></a>
                                                         <?php 
-                                                    }
-                                                    ?>
-
-                                                </div>
-                                            </li>
-                                        </ul>
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
@@ -207,10 +207,9 @@
                                         <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                         <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle" ><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt" style="background-color: #fff"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                        <div class="notification-single-top">
-                                                            <h1>Notification</h1>
-                                                        </div>
+                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">                                        <div class="notification-single-top">
+                                            <h1>Notifikasi</h1>
+                                        </div>
                                                         <ul class="notification-menu">
                                                             <?php 
                                                             $id_saya = $_SESSION['id'];
@@ -232,38 +231,26 @@
                                                             <?php 
                                                         }
                                                         ?>
-                                                    </ul>
-                                                    <div class="notification-view">
-                                                        <a href="#">View All Notification</a>
-                                                    </div>
+                                                    </ul>                                                    <div class="notification-view">
+                                        <a href="#">Lihat Semua Notifikasi</a>
+                                    </div>
                                                 </div>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-
-                                                    <?php 
-                                                    $id_user = $_SESSION['id'];
-                                                    $profil = mysqli_query($koneksi,"select * from user where user_id='$id_user'");
-                                                    $profil = mysqli_fetch_assoc($profil);
-                                                    if($profil['user_foto'] == ""){ 
-                                                        ?>
-                                                        <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                                    <a href="profil.php" class="nav-link" style="color: white; text-decoration: none;">
                                                         <?php 
-                                                    }else{ 
-                                                        ?>
-                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
-                                                        <?php 
-                                                    } 
-                                                    ?>
-                                                    <span class="admin-name"><?php echo $_SESSION['nama']; ?> [ <b>User</b> ]</span>
-                                                    <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
-                                                </a>
-                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                    <li><a href="profil.php"><span class="edu-icon edu-home-admin author-log-ic"></span>Profil Saya</a></li>
-                                                    <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Logout</a></li>
-                                                </ul>
+                                                        $id_admin = $_SESSION['id'];
+                                                        $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
+                                                        $profil = mysqli_fetch_assoc($profil);
+                                                        if($profil['user_foto'] == ""){ 
+                                                            ?>
+                                                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                                                        <?php }else{ ?>
+                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                                                        <?php } ?>
+                                                        <span class="admin-name" style="font-weight: 500;"><?php echo $_SESSION['nama']; ?> | Administrator</span>
+                                                    </a>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -284,7 +271,7 @@
                                     <li class="active">
                                         <a href="index.php"> 
                                             <span class="educate-icon educate-home icon-wrap"></span>
-                                            <span class="mini-click-non">Dashboard</span>
+                                            <span class="mini-click-non">Dasbor</span>
                                         </a>
                                     </li>
 
@@ -308,12 +295,12 @@
                                             <?php }else{ ?>
                                             <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
                                             <?php } ?>
-                                            <span class="mini-click-non"><?php echo $_SESSION['nama']; ?> [ <b>User</b> ]</span>
+                                            <span class="mini-click-non"><?php echo $_SESSION['nama']; ?> [ <b>Pengguna</b> ]</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
+                                        <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Keluar</span></a>
                                     </li>
                                 </ul>
                             </nav>

@@ -150,7 +150,7 @@
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a class="btn btn-default" href="arsip_download.php?id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-download"></i></a>
-                                    <a href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>"  class="btn btn-default"><i class="fa fa-search"></i> Preview</a>
+                                    <a href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>"  class="btn btn-default"><i class="fa fa-search"></i> Pratinjau</a>
                                 </div>
                             </td>
                         </tr>

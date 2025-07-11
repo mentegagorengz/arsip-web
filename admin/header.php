@@ -42,6 +42,48 @@
                 display: none !important;
             }
         }
+
+        /* Sidebar active menu styling */
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a {
+            background: #d80027 !important;
+            color: white !important;
+            border-left: 4px solid #b70020;
+            position: relative;
+        }
+
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a:hover,
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a:focus {
+            background: #b70020 !important;
+            color: white !important;
+        }
+
+        /* Sidebar hover effect for other menu items */
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li:not(.active) > a:hover {
+            background: #f5f5f5 !important;
+            color: #d80027 !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Icon styling for active menu */
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a .educate-icon {
+            color: white !important;
+        }
+
+        /* Mobile menu active styling */
+        .mobile-menu-nav li.active > a {
+            background: #d80027 !important;
+            color: white !important;
+        }
+
+        .mobile-menu-nav li.active > a .educate-icon {
+            color: white !important;
+        }
+
+        .mobile-menu-nav li:not(.active) > a:hover {
+            background: #f5f5f5 !important;
+            color: #d80027 !important;
+            transition: all 0.3s ease;
+        }
     </style>
 
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -52,6 +94,9 @@
     if($_SESSION['role'] != "admin"){
         header("location:../login.php?alert=belum_login");
     }
+
+    // Get current page name
+    $current_page = basename($_SERVER['PHP_SELF']);
     ?>
 </head>
 <body>
@@ -66,42 +111,42 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro" style="margin-top: 30px">
 
                     <ul class="metismenu" id="menu1">
-                        <li class="active">
+                        <li class="<?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
                             <a href="index.php">
                                 <span class="educate-icon educate-home icon-wrap"></span>
-                                <span class="mini-click-non">Dashboard</span>
+                                <span class="mini-click-non">Dasbor</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="<?php echo ($current_page == 'arsip.php') ? 'active' : ''; ?>">
                             <a href="arsip.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Arsip Saya</span></a>
                         </li>
-                        <li>
-                            <a href="arsip_masuk.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Document Masuk</span></a>
+                        <li class="<?php echo ($current_page == 'arsip_masuk.php') ? 'active' : ''; ?>">
+                            <a href="arsip_masuk.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Dokumen Masuk</span></a>
                         </li>
-                        <li>
-                            <a href="arsip_keluar.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Document Keluar</span></a>
+                        <li class="<?php echo ($current_page == 'arsip_keluar.php') ? 'active' : ''; ?>">
+                            <a href="arsip_keluar.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Dokumen Keluar</span></a>
                         </li>
 
-                        <li>
+                        <li class="<?php echo ($current_page == 'kategori.php') ? 'active' : ''; ?>">
                             <a href="kategori.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Kategori</span></a>
                         </li>
 
-                        <li>
-                            <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data User</span></a>
+                        <li class="<?php echo ($current_page == 'user.php') ? 'active' : ''; ?>">
+                            <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Pengguna</span></a>
                         </li>
 
-                        <li>
+                        <li class="<?php echo ($current_page == 'riwayat.php') ? 'active' : ''; ?>">
                             <a href="riwayat.php" aria-expanded="false"><span class="educate-icon educate-form icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Riwayat Unduh</span></a>
                         </li>
 
 
-                        <li>
+                        <li class="<?php echo ($current_page == 'gantipassword.php') ? 'active' : ''; ?>">
                             <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
                         </li>
 
                         <li>
-                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
+                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Keluar</span></a>
                         </li>
 
                     </ul>
@@ -120,7 +165,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-12 col-xs-12">
+                                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
                                         <div class="menu-switcher-pro">
                                             <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #d80027; border: none;">
                                                 <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
@@ -129,29 +174,33 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4" style="padding-left: 0; margin-left: -30px;">
                                         <div class="header-top-menu tabl-d-n">
-                                            <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Aplikasi Pengarsipan</a></li>
+                                            <ul class="nav navbar-nav mai-top-nav" style="margin: 0;">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 0; padding-left: 5px; display: flex; align-items: center; height: 50px;">
+                                                        Aplikasi Pengarsipan
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item">
-                                                    <a href="profil.php" class="nav-link">
+                                                    <a href="profil.php" class="nav-link" style="color: white; text-decoration: none;">
                                                         <?php 
                                                         $id_admin = $_SESSION['id'];
                                                         $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
                                                         $profil = mysqli_fetch_assoc($profil);
                                                         if($profil['user_foto'] == ""){ 
                                                             ?>
-                                                            <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
                                                         <?php }else{ ?>
-                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
+                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
                                                         <?php } ?>
-                                                        <span class="admin-name"><?php echo $_SESSION['nama']; ?> [ <b>Administrator</b> ]</span>
+                                                        <span class="admin-name" style="font-weight: 500;"><?php echo $_SESSION['nama']; ?> | Administrator</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -171,13 +220,12 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li class="active">
+                                <li class="<?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
                                     <a href="index.php">
-
                                         <span class="mini-click-non">Dashboard</span>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="<?php echo ($current_page == 'kategori.php') ? 'active' : ''; ?>">
                                     <a href="kategori.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Kategori</span></a>
                                 </li>
 
@@ -185,23 +233,23 @@
                                     <a href="petugas.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Petugas</span></a>
                                 </li> -->
 
-                                <li>
+                                <li class="<?php echo ($current_page == 'user.php') ? 'active' : ''; ?>">
                                     <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data User</span></a>
                                 </li>
 
-                                <li>
+                                <li class="<?php echo ($current_page == 'arsip.php') ? 'active' : ''; ?>">
                                     <a href="arsip.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Arsip</span></a>
                                 </li>
 
-                                <li>
+                                <li class="<?php echo ($current_page == 'riwayat.php') ? 'active' : ''; ?>">
                                     <a href="riwayat.php" aria-expanded="false"><span class="educate-icon educate-form icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Riwayat Unduh</span></a>
                                 </li>
 
-                                <li>
+                                <li class="<?php echo ($current_page == 'gantipassword.php') ? 'active' : ''; ?>">
                                     <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
                                 </li>
 
-                                <li>
+                                <li class="<?php echo ($current_page == 'profil.php') ? 'active' : ''; ?>">
                                     <a href="profil.php" aria-expanded="false">
                                         <?php 
                                         $id_admin = $_SESSION['id'];

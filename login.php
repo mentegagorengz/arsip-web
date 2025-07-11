@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login Administrator | Aplikasi Pengarsipan</title>
+    <title>Masuk Administrator | Aplikasi Pengarsipan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -130,11 +130,11 @@
 
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "gagal"){
-                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
+                        echo "<div class='alert alert-danger'>MASUK GAGAL! NAMA PENGGUNA DAN KATA SANDI SALAH!</div>";
                     }else if($_GET['alert'] == "logout"){
-                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
+                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL KELUAR</div>";
                     }else if($_GET['alert'] == "belum_login"){
-                        echo "<div class='alert alert-warning'>ANDA HARUS LOGIN UNTUK MENGAKSES DASHBOARD</div>";
+                        echo "<div class='alert alert-warning'>ANDA HARUS MASUK UNTUK MENGAKSES DASBOR</div>";
                     }
                 }
                 ?>
@@ -146,22 +146,22 @@
                         <img style="margin-top:-12px" src="assets/img/Logo.png" alt="Logo" height="50"> <b>Elektronik Arsip</b>
                         </div>
                         <div style="color:#fff" class="login1">
-                        <h4>LOGIN</h4></div>
+                        <h4>MASUK</h4></div>
                         </center>
                         <br>
                         <br>
 
                         <form action="periksa_login.php" method="POST" id="loginForm">
                             <div class="form-group">
-                                <input type="text" placeholder="username" title="Please enter you username" required="required" autocomplete="off" name="username" id="username" class="form-login">
+                                <input type="text" placeholder="nama pengguna" title="Silakan masukkan nama pengguna Anda" required="required" autocomplete="off" name="username" id="username" class="form-login">
                               <div class="icon"><i style="color:#fff" class="bx bx-user"></i></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" title="Please enter your password" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-login">
+                                <input type="password" title="Silakan masukkan kata sandi Anda" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-login">
                                 <div class="icon"><i style="color:#fff" class="bx bx-lock"></i></div>
                             </div>
                             
-                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Login">
+                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Masuk">
                         </form>
 
                         <!-- <br>

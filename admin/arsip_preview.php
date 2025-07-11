@@ -7,13 +7,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Preview Arsip</h4>
+                                <h4 style="margin-bottom: 0px">Pratinjau Arsip</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
                                 <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Preview Arsip</span></li>
+                                <li><span class="bread-blod">Pratinjau Arsip</span></li>
                             </ul>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
             <div class="panel panel">
 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Preview Arsip</h3>
+                    <h3 class="panel-title">Pratinjau Arsip</h3>
                 </div>
                 <div class="panel-body">
 
@@ -98,7 +98,7 @@
                                     <?php
                                 }else{
                                     ?>
-                                    <p>Preview tidak tersedia, silahkan <a  style="color: blue" href="../arsip/<?php echo $d['arsip_file']; ?>">Download di sini.</a></p>.
+                                    <p>Pratinjau tidak tersedia, silahkan <a  style="color: blue" href="../arsip/<?php echo $d['arsip_file']; ?>">Unduh di sini.</a></p>.
                                     <?php
                                 }
                                 ?>
