@@ -8,13 +8,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Document Surat Keluar</h4>
+                                <h4 style="margin-bottom: 0px">Dokumen Surat Keluar</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
                                 <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Document Keluar</span></li>
+                                <li><span class="bread-blod">Dokumen Keluar</span></li>
                             </ul>
                         </div>
                     </div>
