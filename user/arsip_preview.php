@@ -50,6 +50,7 @@
                         <div class="row">
                             <div class="col-lg-4">
 
+                                <div class="responsive-table-wrapper">
                                 <table class="table">
                                     <tr>
                                         <th>Kode Arsip</th>
@@ -80,6 +81,7 @@
                                         <td><?php echo $d['arsip_keterangan']; ?></td>
                                     </tr>
                                 </table>
+                                </div>
 
                             </div>
                             <div class="col-lg-8">

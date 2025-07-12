@@ -55,6 +55,7 @@
                 }
                 ?>
             </center>
+            <div class="responsive-table-wrapper">
             <table id="table" class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
                     <tr>
@@ -150,6 +151,7 @@
                     ?>
                 </tbody>
             </table>
+            </div>
 
 
         </div>

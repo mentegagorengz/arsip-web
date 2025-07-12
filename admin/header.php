@@ -490,12 +490,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             Ganti Password
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="profil.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
                             <i class="educate-icon educate-professor" style="margin-right: 15px; color: #666;"></i>
                             Profil
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="logout.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333;">
                             <i class="educate-icon educate-pages" style="margin-right: 15px; color: #666;"></i>
