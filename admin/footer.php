@@ -161,7 +161,30 @@
 
 </script>
 
-
+<style>
+    .fa-cloud {
+        color: white !important;
+    }
+    .fa-download {
+        color: black !important;
+    }
+    .fa-file-word-o {
+        color: white !important;
+    }
+    .fa-trash {
+        color: white !important;
+    }
+    .pagination>.active>a {
+        background-color: #B22222;
+        border-color: #B22222;
+    }
+    .fa-arrow-left {
+        color: white !important;
+    }
+    /* .btn {
+        color: white !important;
+    } */
+</style>
 
 </body>
 

@@ -34,7 +34,7 @@
         <div class="panel-body">
 
             <div class="pull-right">
-                <a href="user_tambah.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-plus"></i> Tambah pengguna</a>
+                <a href="user_tambah.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white !important;"><i class="fa fa-plus" style="color: white !important;"></i> Tambah pengguna</a>
             </div>
             
             <br>

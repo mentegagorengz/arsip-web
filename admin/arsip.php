@@ -32,7 +32,7 @@
         <div class="panel-body">
 
         <div class="pull-right">
-                <a href="arsip_tambah.php" class="btn btn-primary"><i class="fa fa-cloud"></i> Unggah Arsip</a>
+                <a href="arsip_tambah.php" class="btn btn-primary" style="color: white !important;"><i class="fa fa-cloud"></i> Unggah Arsip</a>
             </div>
 
             <br>

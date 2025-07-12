@@ -36,7 +36,7 @@
                 <div class="panel-body">
 
                     <div class="pull-right">
-                        <a href="user.php" class="btn btn-kategori"><i class="fa fa-arrow-left"></i> Kembali</a>
+                        <a href="user.php" class="btn btn-kategori" style="border-color: #8B5C2A; background-color: #8B5C2A; color: white !important;"><i class="fa fa-arrow-left"></i> Kembali</a>
                     </div>
                     <br>
                     <br>
@@ -74,7 +74,7 @@
 
                         <div class="form-group">
                             <label></label>
-                            <button type="submit" class="btn btn-kategori">
+                            <button type="submit" class="btn btn-kategori" style="border-color: #8B5C2A; background-color: #8B5C2A; color: white !important;">
                                 Simpan
                             </button>
 

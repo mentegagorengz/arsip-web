@@ -155,6 +155,31 @@
     });
 </script>
 
+<style>
+    .fa-cloud {
+        color: white !important;
+    }
+    .fa-download {
+        color: black !important;
+    }
+    .fa-file-word-o {
+        color: white !important;
+    }
+    .fa-trash {
+        color: white !important;
+    }
+    .pagination>.active>a {
+        background-color: #8B5C2A;
+        border-color: #8B5C2A;
+    }
+    .fa-arrow-left {
+        color: white !important;
+    }
+    /* .btn {
+        color: white !important;
+    } */
+</style>
+
 </body>
 
 </html>

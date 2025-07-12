@@ -34,7 +34,7 @@
 
 
             <div class="pull-right">
-                <a href="kategori_tambah.php" class="btn btn-kategori"><i class="fa fa-plus"></i> Tambah kategori</a>
+                <a href="kategori_tambah.php" class="btn btn-kategori" style="color: white !important;"><i class="fa fa-plus"style="color: white !important;"></i> Tambah kategori</a>
             </div>
 
             <br>
@@ -67,7 +67,7 @@
                                     ?>
                                     <div class="btn-group">
                                         <a href="kategori_edit.php?id=<?php echo $p['kategori_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-wrench"></i></a>
-                                        <a href="kategori_hapus.php?id=<?php echo $p['kategori_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-trash"></i></a>
+                                        <a href="kategori_hapus.php?id=<?php echo $p['kategori_id']; ?>" class="btn btn-default"><i style="color:#000 !important;" class="fa fa-trash"></i></a>
                                     </div>
                                     <?php
                                 }
