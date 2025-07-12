@@ -9,13 +9,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Data User</h4>
+                                <h4 style="margin-bottom: 0px">Data Pengguna</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">User</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
+                                <li><span class="bread-blod">Pengguna</span></li>
                             </ul>
                         </div>
                     </div>
@@ -29,12 +29,12 @@
     <div class="panel panel">
 
         <div class="panel-heading">
-            <h3 class="panel-title">Data User</h3>
+            <h3 class="panel-title">Data Pengguna</h3>
         </div>
         <div class="panel-body">
 
             <div class="pull-right">
-                <a href="user_tambah.php" class="btn btn-kategori"><i class="fa fa-plus"></i> Tambah user</a>
+                <a href="user_tambah.php" class="btn btn-kategori"><i class="fa fa-plus"></i> Tambah pengguna</a>
             </div>
             
             <br>
@@ -47,7 +47,7 @@
                         <th width="1%">No</th>
                         <th width="5%">Foto</th>
                         <th>Nama</th>
-                        <th>Username</th>
+                        <th>Nama Pengguna</th>
                     </tr>
                 </thead>
                 <tbody>

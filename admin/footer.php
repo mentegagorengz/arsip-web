@@ -161,58 +161,7 @@
 
 </script>
 
-<script>
-    // Mobile Menu Toggle Functions
-    function toggleMobileMenu() {
-        const sidebar = document.querySelector('.left-sidebar-pro');
-        const overlay = document.querySelector('.mobile-overlay');
-        const closeBtn = document.querySelector('.mobile-close-btn');
-        
-        sidebar.classList.toggle('active');
-        overlay.classList.toggle('active');
-        
-        if (window.innerWidth <= 768) {
-            closeBtn.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
-        }
-    }
-    
-    function closeMobileMenu() {
-        const sidebar = document.querySelector('.left-sidebar-pro');
-        const overlay = document.querySelector('.mobile-overlay');
-        const closeBtn = document.querySelector('.mobile-close-btn');
-        
-        sidebar.classList.remove('active');
-        overlay.classList.remove('active');
-        closeBtn.style.display = 'none';
-    }
-    
-    // Close mobile menu when clicking on menu items
-    document.querySelectorAll('.left-sidebar-menu-pro a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                closeMobileMenu();
-            }
-        });
-    });
-    
-    // Show/hide mobile menu button based on screen size
-    function checkScreenSize() {
-        const toggleBtn = document.querySelector('.mobile-menu-toggle');
-        const sidebar = document.querySelector('.left-sidebar-pro');
-        
-        if (window.innerWidth > 768) {
-            toggleBtn.style.display = 'none';
-            sidebar.classList.remove('active');
-            document.querySelector('.mobile-overlay').classList.remove('active');
-        } else {
-            toggleBtn.style.display = 'block';
-        }
-    }
-    
-    // Check screen size on load and resize
-    window.addEventListener('load', checkScreenSize);
-    window.addEventListener('resize', checkScreenSize);
-</script>
+
 
 </body>
 

@@ -8,12 +8,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Upload Arsip</h4>
+                                <h4 style="margin-bottom: 0px">Unggah Arsip</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Arsip</span></li>
                             </ul>
                         </div>
@@ -32,7 +32,7 @@
             <div class="panel panel">
 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upload arsip</h3>
+                    <h3 class="panel-title">Unggah arsip</h3>
                 </div>
                 <div class="panel-body">
 
@@ -46,7 +46,7 @@
                     <form method="post" action="arsip_aksi.php" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label>User <?php if(isset($_GET['tipe'])){
+                            <label>Pengguna <?php if(isset($_GET['tipe'])){
                                 if($_GET["tipe"] == "SURAT_MASUK") echo "Pengirim";
                                 else echo "Penerima";
                             }?></label>
@@ -110,13 +110,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label>File</label>
+                            <label>Berkas</label>
                             <input type="file" name="file">
                         </div>
 
                         <div class="form-group">
                             <label></label>
-                            <input type="submit" class="btn btn-primary" value="Upload">
+                            <input type="submit" class="btn btn-primary" value="Unggah">
                         </div>
 
                     </form>

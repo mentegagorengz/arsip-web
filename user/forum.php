@@ -12,7 +12,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Ganti Password</span></li>
                             </ul>
                         </div>

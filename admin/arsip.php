@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Arsip</span></li>
                             </ul>
                         </div>
@@ -32,7 +32,7 @@
         <div class="panel-body">
 
         <div class="pull-right">
-                <a href="arsip_tambah.php" class="btn btn-primary"><i class="fa fa-cloud"></i> Upload Arsip</a>
+                <a href="arsip_tambah.php" class="btn btn-primary"><i class="fa fa-cloud"></i> Unggah Arsip</a>
             </div>
 
             <br>
@@ -44,7 +44,7 @@
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "gagal"){
                         ?>
-                        <div class="alert alert-danger">File arsip gagal diupload. krena demi keamanan file .php tidak diperbolehkan.</div>
+                        <div class="alert alert-danger">File arsip gagal diunggah. Karena demi keamanan file .php tidak diperbolehkan.</div>
                         <?php
                     }else{
                         ?>
@@ -59,7 +59,7 @@
                 <thead>
                     <tr>
                         <th width="1%">No</th>
-                        <th>Waktu Upload</th>
+                        <th>Waktu Unggah</th>
                         <th>Arsip</th>
                         <th>Kategori</th>
                         <th>Pengirim</th>
@@ -80,7 +80,6 @@
                             <td><?php echo $no++; ?></td>
                             <td><?php echo date('H:i:s  d-m-Y',strtotime($p['arsip_waktu_upload'])) ?></td>
                             <td>
-
                                 <b>KODE</b> : <?php echo $p['arsip_kode'] ?><br>
                                 <b>Nama</b> : <?php echo $p['arsip_nama'] ?><br>
                                 <b>Jenis</b> : <?php echo $p['arsip_jenis'] ?><br>
@@ -135,7 +134,7 @@
                                 <div class="btn-group">
                                 <a class="btn btn-default" href="arsip_process.php?status=APPROVED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-check"></i></a>
                                 <a class="btn btn-default" href="arsip_process.php?status=REJECTED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-times"></i></a>
-                                    <a  class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>"><i style="color:#000" class="fa fa-download"></i></a>
+                                    <a  class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>" title="Unduh"><i style="color:#000" class="fa fa-download"></i></a>
                                     <a  href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-search"></i> Pratinjau</a>
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
                                         <i class="fa fa-trash"></i>

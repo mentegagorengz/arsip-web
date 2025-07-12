@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Pratinjau</span></li>
                             </ul>
                         </div>
@@ -56,7 +56,7 @@
                                         <td><?php echo $d['arsip_kode']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Waktu Upload</th>
+                                        <th>Waktu Unggah</th>
                                         <td><?php echo date('H:i:s  d-m-Y',strtotime($d['arsip_waktu_upload'])) ?></td>
                                     </tr>
                                     <tr>
@@ -72,7 +72,7 @@
                                         <td><?php echo $d['arsip_jenis']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Petugas Pengupload</th>
+                                        <th>Petugas Pengunggah</th>
                                         <td><?php echo $d['user_nama']; ?></td>
                                     </tr>
                                     <tr>

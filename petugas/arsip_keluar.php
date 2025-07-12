@@ -8,13 +8,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Document Surat Keluar</h4>
+                                <h4 style="margin-bottom: 0px">Dokumen Surat Keluar</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Document Keluar</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
+                                <li><span class="bread-blod">Dokumen Keluar</span></li>
                             </ul>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
 
 
             <div class="pull-right">
-                <a href="arsip_tambah.php?tipe=SURAT_KELUAR" class="btn btn-primary"><i class="fa fa-cloud"></i> Upload Arsip</a>
+                <a href="arsip_tambah.php?tipe=SURAT_KELUAR" class="btn btn-primary"><i class="fa fa-cloud"></i> Unggah Arsip</a>
             </div>
 
             <br>
@@ -42,7 +42,7 @@
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "gagal"){
                         ?>
-                        <div class="alert alert-danger">File arsip gagal diupload. krena demi keamanan file .php tidak diperbolehkan.</div>
+                        <div class="alert alert-danger">Berkas arsip gagal diunggah. Karena demi keamanan berkas .php tidak diperbolehkan.</div>
                         <?php
                     }else{
                         ?>
@@ -56,7 +56,7 @@
                 <thead>
                     <tr>
                         <th width="1%">No</th>
-                        <th>Waktu Upload</th>
+                        <th>Waktu Unggah</th>
                         <th>Arsip</th>
                         <th>Kategori</th>
                         <th>Keterangan</th>

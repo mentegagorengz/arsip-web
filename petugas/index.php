@@ -8,13 +8,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Dashboard</h4>
+                                <h4 style="margin-bottom: 0px">Dasbor</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Dashboard</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
+                                <li><span class="bread-blod">Dasbor</span></li>
                             </ul>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 table-mg-t-pro-n">
-                    <h3 class="box-title">User / Pengguna</h3>
+                    <h3 class="box-title">Pengguna</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash2"></div>

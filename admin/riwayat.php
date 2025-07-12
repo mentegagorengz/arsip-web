@@ -38,7 +38,7 @@
                     <tr>
                         <th width="1%">No</th>
                         <th width="18%">Waktu Upload</th>
-                        <th width="30%">User</th>
+                        <th width="30%">Pengguna</th>
                         <th width="30%">Arsip yang diunduh</th>
                     </tr>
                 </thead>
