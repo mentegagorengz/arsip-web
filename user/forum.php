@@ -61,7 +61,7 @@
                             <textarea type="text" class="form-control" placeholder="Apa yang Anda pikirkan..." name="content" required="required" min="5"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Kirim">
+                            <input type="submit" class="btn btn-sm" style="background-color: #404040; color: white;" value="Kirim">
                         </div>
                     </form>
 

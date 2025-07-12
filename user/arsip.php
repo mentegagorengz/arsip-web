@@ -60,7 +60,7 @@
 
                     <div class="col-lg-4">
                         <br>
-                        <input type="submit" class="btn btn-primary" value="Tampilkan">
+                        <input type="submit" class="btn btn-sm" style="background-color: #404040; color: white;" value="Tampilkan">
                     </div>
 
                 </div>
@@ -80,11 +80,11 @@
         </div>
         <div class="panel-body">
 
-            <div class="pull-right">
-                <a href="https://drive.google.com/drive/folders/1QhQEVbd0pnzZPN0DTUXCKsdcEVwtaDre?usp=sharing" target="_blank" class="btn btn-primary"><i class="fa fa-file-word-o"></i> Template Surat</a>
+            <div class="pull-right" style="margin-left: 10px;">
+                <a href="https://drive.google.com/drive/folders/1QhQEVbd0pnzZPN0DTUXCKsdcEVwtaDre?usp=sharing" target="_blank" class="btn btn-sm" style="background-color: #404040; color: white;"><i class="fa fa-file-word-o"></i> Template Surat</a>
             </div>
             <div class="pull-right">
-                <a href="arsip_tambah.php" class="btn btn-primary"><i class="fa fa-cloud"></i> Unggah Arsip</a>
+                <a href="arsip_tambah.php" class="btn btn-sm" style="background-color: #404040; color: white;"><i class="fa fa-cloud"></i> Unggah Arsip</a>
             </div>
 
             <br>

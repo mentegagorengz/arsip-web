@@ -37,7 +37,7 @@
                 <div class="panel-body">
 
                     <div class="pull-right">            
-                        <a href="arsip.php" class="btn btn-sm btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                        <a href="arsip.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-arrow-left"></i> Kembali</a>
                     </div>
 
                     <br>
@@ -91,7 +91,7 @@
 
                             <div class="form-group">
                                 <label></label>
-                                <input type="submit" class="btn btn-primary" value="Upload">
+                                <input type="submit" class="btn btn-sm" style="background-color: #8B5C2A; color: white;" value="Upload">
                             </div>
 
                         </form>

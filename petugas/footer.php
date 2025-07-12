@@ -1,5 +1,5 @@
 <!-- Footer Section -->
-<footer class="main-footer text-sm" style="background-color: #B22222; color: white; padding: 10px 20px; margin-top: 20px;">
+<footer class="main-footer text-sm" style="background-color: #8B5C2A; color: white; padding: 10px 20px; margin-top: 20px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -30,7 +30,7 @@
         border-top: 1px solid #dee2e6;
         color: #6c757d;
         font-size: 0.875rem;
-        background-color: #B22222 !important;
+        background-color: #8B5C2A !important;
         box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     }
     
@@ -154,6 +154,31 @@
         });
     });
 </script>
+
+<style>
+    .fa-cloud {
+        color: white !important;
+    }
+    .fa-download {
+        color: black !important;
+    }
+    .fa-file-word-o {
+        color: white !important;
+    }
+    .fa-trash {
+        color: white !important;
+    }
+    .pagination>.active>a {
+        background-color: #8B5C2A;
+        border-color: #8B5C2A;
+    }
+    .fa-arrow-left {
+        color: white !important;
+    }
+    /* .btn {
+        color: white !important;
+    } */
+</style>
 
 </body>
 

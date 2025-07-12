@@ -28,7 +28,7 @@
 <div class="container-fluid" style="margin-bottom: 20px;">
     <div class="row">
         <div class="col-lg-12">
-            <a href="arsip.php" class="btn btn-sm btn-kategori"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="arsip.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@
                             <input type="password" class="form-control" placeholder="Masukkan Password Baru .." name="password" required="required" min="5">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-kategori" value="Simpan">
+                            <input type="submit" class="btn btn-sm" style="background-color: #8B5C2A; color: white;" value="Simpan">
                         </div>
                     </form>
                 </div>

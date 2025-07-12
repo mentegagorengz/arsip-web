@@ -28,7 +28,7 @@
 <div class="container-fluid" style="margin-bottom: 20px;">
     <div class="row">
         <div class="col-lg-12 style">
-            <a href="arsip.php" class="btn btn-sm btn-kategori"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="arsip.php" class="btn btn-sm" style="background-color: #404040; color: white;"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Simpan">
+                                <input type="submit" class="btn btn-sm" style="background-color: #404040; color: white;" value="Simpan">
                             </div>
                         </form>
                     </div>

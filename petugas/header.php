@@ -56,22 +56,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         /* Sidebar active menu styling */
         .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a {
-            background: #d80027 !important;
+            background: #8B5C2A !important;
             color: white !important;
-            border-left: 4px solid #b70020;
+            border-left: 4px solid #8B5C2A;
             position: relative;
         }
 
         .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a:hover,
         .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a:focus {
-            background: #b70020 !important;
+            background: #8B5C2A !important;
             color: white !important;
         }
 
         /* Sidebar hover effect for other menu items */
         .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li:not(.active) > a:hover {
             background: #f5f5f5 !important;
-            color: #d80027 !important;
+            color: #8B5C2A !important;
             transition: all 0.3s ease;
         }
 
@@ -82,7 +82,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         /* Mobile menu active styling */
         .mobile-menu-nav li.active > a {
-            background: #d80027 !important;
+            background: #8B5C2A !important;
             color: white !important;
         }
 
@@ -92,7 +92,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         .mobile-menu-nav li:not(.active) > a:hover {
             background: #f5f5f5 !important;
-            color: #d80027 !important;
+            color: #8B5C2A !important;
             transition: all 0.3s ease;
         }
 
@@ -235,7 +235,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 <body>
     <!-- Mobile Menu Button -->
-    <div class="mobile-menu-area" style="background-color: #B22222;">
+    <div class="mobile-menu-area" style="background-color: #8B5C2A;">
         <div class="container-fluid" style="padding: 10px 15px;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
                 <div class="col-auto">
@@ -272,7 +272,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </div>
         <!-- Mobile Sidebar -->
         <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
-            <div style="background: #d80027; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="background: #8B5C2A; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
                 <h5 style="margin: 0;">Menu</h5>
                 <button id="close-mobile-sidebar" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
             </div>
@@ -403,7 +403,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     
     <div class="all-content-wrapper">       
         <div class="header-advance-area">
-            <div class="navbar navbar-light desktop-navbar" style="background-color: #B22222;">
+            <div class="navbar navbar-light desktop-navbar" style="background-color: #8B5C2A;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -411,7 +411,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                 <div class="row">
                                     <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
                                         <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #B22222; border: none;">
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #8B5C2A; border: none;">
                                                 <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
                                                 <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
                                                 <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>

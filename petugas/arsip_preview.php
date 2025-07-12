@@ -36,7 +36,7 @@
                 </div>
                 <div class="panel-body">
 
-                    <a href="arsip.php" class="btn btn-sm btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <a href="arsip.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-arrow-left"></i> Kembali</a>
 
                     <br>
                     <br>
@@ -98,7 +98,7 @@
                                     <div class="pdf-singe-pro">
                                         <iframe src="../arsip/<?php echo $d['arsip_file']; ?>" width="100%" height="600px" frameborder="0"></iframe>
                                         <br><br>
-                                        <a href="../arsip/<?php echo $d['arsip_file']; ?>" class="btn btn-success" target="_blank">
+                                        <a href="../arsip/<?php echo $d['arsip_file']; ?>" class="btn btn-sm" style="background-color: #8B5C2A; color: white;" target="_blank">
                                             <i class="fa fa-external-link"></i> Buka di Tab Baru
                                         </a>
                                     </div>

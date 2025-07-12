@@ -1212,8 +1212,8 @@ ul.breadcome-menu li a:hover{
 /*  10. Event
 /*----------------------------------------*/
 .calender-inner .fc-state-default{
-    background:#006DF0;
-    color:#fff;
+    background:#bdbdbd;
+    color:#303030;
     background-image:none;
     text-shadow:none;
     outline:none;
@@ -1388,7 +1388,7 @@ ul.tab-custon-design, ul.tab-review-design {
 .message-content {
     display: block;
     font-size:14px;
-    color:#303030;
+    color:#404040;
     line-height:24px;
     margin: 10px 0px;
 }
@@ -1454,8 +1454,8 @@ ul.tab-custon-design, ul.tab-review-design {
 }
 .product-buttons button{
     border:none;
-    background:#006DF0;
-    color:#fff;
+    background:#bdbdbd;
+    color:#404040;
     padding:5px 10px;
     border-radius:3px;
     transition:all .4s ease 0s;
