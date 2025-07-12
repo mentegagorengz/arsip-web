@@ -30,7 +30,7 @@ if($filename == ""){
 		$nama_file_lama = $l['user_foto'];
 		unlink("../gambar/user/".$nama_file_lama);
 
-		// upload file baru
+		// unggah file baru
 		move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/user/'.$rand.'_'.$filename);
 		$nama_file = $rand.'_'.$filename;
 		mysqli_query($koneksi, "update user set user_nama='$nama', user_username='$username', user_foto='$nama_file' where user_id='$id'")or die(mysqli_error($koneksi));

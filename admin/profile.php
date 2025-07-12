@@ -8,13 +8,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4>Profile User</h4>
+                                <h4>Profil Pengguna</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu">
-                                <li><a href="index.php">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Profile</span></li>
+                                <li><a href="index.php">Beranda</a> <span class="bread-slash">/</span></li>
+                                <li><span class="bread-blod">Profil</span></li>
                             </ul>
                         </div>
                     </div>

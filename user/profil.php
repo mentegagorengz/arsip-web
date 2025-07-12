@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Profil</span></li>
                             </ul>
                         </div>
@@ -53,14 +53,14 @@
                     ?>
                     <div class="profile-image">
                         <?php if ($s['user_foto'] == ""): ?>
-                            <img src="../gambar/sistem/user.png" alt="Default Profile">
+                            <img src="../gambar/sistem/user.png" alt="Profil Default">
                         <?php else: ?>
-                            <img src="../gambar/user/<?php echo $s['user_foto']; ?>" alt="User Profile">
+                            <img src="../gambar/user/<?php echo $s['user_foto']; ?>" alt="Profil Pengguna">
                         <?php endif; ?>
                     </div>
                     <div class="profile-info">
                         <h4><?php echo htmlspecialchars($s['user_nama']); ?></h4>
-                        <div class="profile-role">Admin</div>
+                        <div class="profile-role">Pengguna</div>
                         <p class="profile-desc">Pengelolaan arsip jadi lebih mudah dengan Aplikasi Arsip.</p>
                         <!-- <div class="profile-status">
                             <span class="status-dot"></span>
@@ -95,8 +95,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Username .." name="username" required="required" value="<?php echo $s['user_username'] ?>">
+                                <label>Nama Pengguna</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Nama Pengguna .." name="username" required="required" value="<?php echo $s['user_username'] ?>">
                             </div>
 
                             <div class="form-group">
@@ -108,16 +108,10 @@
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Simpan">
                             </div>
-
                         </form>
-
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
     </div>
 </div>

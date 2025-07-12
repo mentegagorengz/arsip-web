@@ -33,12 +33,13 @@
         <div class="panel-body">
 
 
+            <div class="responsive-table-wrapper">
             <table id="table" class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
                     <tr>
                         <th width="1%">No</th>
                         <th width="18%">Waktu Upload</th>
-                        <th width="30%">User</th>
+                        <th width="30%">Pengguna</th>
                         <th width="30%">Arsip yang diunduh</th>
                     </tr>
                 </thead>
@@ -61,6 +62,7 @@
                     ?>
                 </tbody>
             </table>
+            </div>
 
 
         </div>

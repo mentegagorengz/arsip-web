@@ -1,3 +1,15 @@
+<?php
+include '../koneksi.php';
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['role']) || $_SESSION['role'] != "petugas") {
+    header("location:../login.php?alert=belum_login");
+    exit;
+}
+// Get current page name
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
 <!doctype html>
 <html>
 
@@ -28,7 +40,6 @@
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
 
     <style>
@@ -84,30 +95,262 @@
             color: #d80027 !important;
             transition: all 0.3s ease;
         }
+
+        /* Sidebar Toggle Animation */
+        #sidebar {
+            transition: all 0.3s ease;
+            min-width: 200px;
+            max-width: 200px;
+        }
+        #sidebar.active {
+            min-width: 80px;
+            max-width: 80px;
+        }
+        .all-content-wrapper {
+            margin-left: 200px;
+            transition: all 0.3s ease;
+        }
+        .mini-navbar .all-content-wrapper {
+            margin-left: 80px;
+        }
+        .mini-click-non, .sidebar-text {
+            transition: opacity 0.3s ease;
+        }
+        .sidebar-text {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Responsive Mobile Sidebar */
+        @media (max-width: 768px) {
+            .left-sidebar-pro {
+                position: fixed;
+                left: -250px;
+                transition: left 0.3s ease;
+                z-index: 1000;
+                width: 250px;
+            }
+            .left-sidebar-pro.active {
+                left: 0;
+            }
+            .all-content-wrapper {
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+            .mobile-menu-toggle {
+                display: block;
+                position: fixed;
+                top: 15px;
+                left: 15px;
+                z-index: 1001;
+                background: #fff;
+                border: none;
+                padding: 8px;
+                border-radius: 4px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            .mobile-menu-toggle i {
+                font-size: 18px;
+                color: #333;
+            }
+            .mobile-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+            .mobile-overlay.active {
+                display: block;
+            }
+            .header-top-area {
+                padding-left: 50px;
+            }
+        }
+        .mobile-menu-toggle {
+            display: none;
+        }
     </style>
 
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
-    <?php 
-    include '../koneksi.php';
-    session_start();
-    if($_SESSION['role'] != "petugas"){
-        header("location:../login.php?alert=belum_login");
-    }
-
-    // Get current page name
-    $current_page = basename($_SERVER['PHP_SELF']);
-    ?>
+    <!-- Sidebar Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarCollapseBtn = document.getElementById('sidebarCollapse');
+            const sidebar = document.getElementById('sidebar');
+            const contentWrapper = document.querySelector('.all-content-wrapper');
+            if (sidebarCollapseBtn) {
+                sidebarCollapseBtn.addEventListener('click', function() {
+                    document.body.classList.toggle('mini-navbar');
+                    sidebar.classList.toggle('active');
+                    if (document.body.classList.contains('mini-navbar')) {
+                        sidebar.style.minWidth = '80px';
+                        sidebar.style.maxWidth = '80px';
+                        contentWrapper.style.marginLeft = '80px';
+                        const miniTexts = document.querySelectorAll('.mini-click-non');
+                        const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                        miniTexts.forEach(text => { text.style.display = 'none'; });
+                        sidebarTexts.forEach(text => { text.style.display = 'none'; });
+                    } else {
+                        sidebar.style.minWidth = '200px';
+                        sidebar.style.maxWidth = '200px';
+                        contentWrapper.style.marginLeft = '200px';
+                        const miniTexts = document.querySelectorAll('.mini-click-non');
+                        const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                        miniTexts.forEach(text => { text.style.display = 'inline'; });
+                        sidebarTexts.forEach(text => { text.style.display = 'block'; });
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- Mobile Sidebar Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const closeSidebarButton = document.getElementById('close-mobile-sidebar');
+            const sidebarOverlay = document.getElementById('mobile-sidebar-overlay');
+            function openMobileSidebar() {
+                mobileSidebar.style.left = '0';
+                sidebarOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMobileSidebar() {
+                mobileSidebar.style.left = '-100%';
+                sidebarOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMobileSidebar);
+            if (closeSidebarButton) closeSidebarButton.addEventListener('click', closeMobileSidebar);
+            if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeMobileSidebar);
+        });
+    </script>
 </head>
 
 
 
 <body>
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-area" style="background-color: #B22222;">
+        <div class="container-fluid" style="padding: 10px 15px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                <div class="col-auto">
+                    <button id="mobile-menu-button" type="button" class="btn p-0" 
+                            style="background: none; border: none; color: white;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="col text-center">
+                    <h5 style="color: white; margin: 0; font-weight: 500; font-size: 18px;">
+                        Aplikasi Pengarsipan
+                    </h5>
+                </div>
+                <div class="col-auto">
+                    <a href="profil.php" style="color: white; text-decoration: none;">
+                        <?php 
+                            $id_admin = $_SESSION['id'];
+                            $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
+                            $profil = mysqli_fetch_assoc($profil);
+                            if($profil['user_foto'] == ""){ 
+                        ?>
+                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                        <?php }else{ ?>
+                            <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                        <?php } ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Sidebar -->
+        <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
+            <div style="background: #d80027; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <h5 style="margin: 0;">Menu</h5>
+                <button id="close-mobile-sidebar" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
+            </div>
+            <nav style="padding: 15px 0; back">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li>
+                        <a href="index.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-home" style="margin-right: 15px; color: #666;"></i>
+                            Dasbor
+                        </a>
+                    </li>
+                    <li>
+                        <a href="arsip.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-data-table" style="margin-right: 15px; color: #666;"></i>
+                            Arsip Saya
+                        </a>
+                    </li>
+                    <li>
+                        <a href="arsip_masuk.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-data-table" style="margin-right: 15px; color: #666;"></i>
+                            Dokumen Masuk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="arsip_keluar.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-data-table" style="margin-right: 15px; color: #666;"></i>
+                            Dokumen Keluar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="kategori.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-course" style="margin-right: 15px; color: #666;"></i>
+                            Data Kategori
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-professor" style="margin-right: 15px; color: #666;"></i>
+                            Data Pengguna
+                        </a>
+                    </li>
+                    <li>
+                        <a href="riwayat.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-form" style="margin-right: 15px; color: #666;"></i>
+                            Riwayat Unduh
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gantipassword.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee;">
+                            <i class="educate-icon educate-danger" style="margin-right: 15px; color: #666;"></i>
+                            Ganti Kata Sandi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="logout.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333;">
+                            <i class="educate-icon educate-pages" style="margin-right: 15px; color: #666;"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Mobile Overlay -->
+        <div id="mobile-sidebar-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999;"></div>
+    </div>
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 50px;">
-            <div class="sidebar-header" style="background blue">
-                <a href="index.php">
-                    <img src="../assets/img/logo/logo.png" alt="Logo" class="img-responsive" style="width: 100%; max-width: 150px; height: auto;" />
+            <div class="sidebar-header" style="padding-top: 10px; padding-bottom: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+                <a href="index.php" style=" display: block">
+                    <div style="display: flex; align-items: center;">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img src="../assets/img/logo/logo.png" style="max-height: 120px;" />
+                        </div>
+                        <div class="sidebar-text" style=" width: 100%; margin-left: 5px;">
+                            <div style="padding: 4px; color: black; font-weight: 500; font-size: 14px; text-align: left; white-space: nowrap; overflow: hidden; margin-right: 10px;">Aplikasi Pengarsipan</div>
+                            <!-- <div style="padding: 4px;  color: black; font-weight: 550; font-size: 14px; text-align: left;">Pengarsipan</div> -->
+                        </div>
+                    </div>
                 </a>
             </div>
 
@@ -145,7 +388,7 @@
                         </li>
 
                         <li class="<?php echo ($current_page == 'gantipassword.php') ? 'active' : ''; ?>">
-                            <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
+                            <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Kata Sandi</span></a>
                         </li>
 
                         <li>
@@ -158,8 +401,7 @@
         </nav>
     </div>
     
-    <div class="all-content-wrapper">
-        
+    <div class="all-content-wrapper">       
         <div class="header-advance-area">
             <div class="navbar navbar-light desktop-navbar" style="background-color: #B22222;">
                 <div class="container-fluid">
@@ -180,9 +422,9 @@
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav" style="margin: 0;">
                                                 <li class="nav-item">
-                                                    <a href="#" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 0; padding-left: 5px; display: flex; align-items: center; height: 50px;">
+                                                    <!-- <a href="#" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 0; padding-left: 5px; display: flex; align-items: center; height: 50px;">
                                                         Aplikasi Pengarsipan
-                                                    </a>
+                                                    </a> -->
                                                 </li>
                                             </ul>
                                         </div>
@@ -214,69 +456,58 @@
                     </div>
                 </div>
             </div>
-    <!-- Mobile Menu start -->
-    <div class="mobile-menu-area" style="background-color: #B22222;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="mobile-menu">
-                        <nav id="dropdown">
-                            <ul class="mobile-menu-nav">
-                                <li class="<?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
-                                    <a href="index.php">
-                                        <span class="mini-click-non">Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="<?php echo ($current_page == 'arsip.php') ? 'active' : ''; ?>">
-                                    <a href="arsip.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Arsip Saya</span></a>
-                                </li>
-                                <li class="<?php echo ($current_page == 'arsip_masuk.php') ? 'active' : ''; ?>">
-                                    <a href="arsip_masuk.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Document Masuk</span></a>
-                                </li>
-                                <li class="<?php echo ($current_page == 'arsip_keluar.php') ? 'active' : ''; ?>">
-                                    <a href="arsip_keluar.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Document Keluar</span></a>
-                                </li>
 
-                                <li class="<?php echo ($current_page == 'kategori.php') ? 'active' : ''; ?>">
-                                    <a href="kategori.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Kategori</span></a>
-                                </li>
-
-                                <li class="<?php echo ($current_page == 'user.php') ? 'active' : ''; ?>">
-                                    <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data User</span></a>
-                                </li>
-
-                                <li class="<?php echo ($current_page == 'riwayat.php') ? 'active' : ''; ?>">
-                                    <a href="riwayat.php" aria-expanded="false"><span class="educate-icon educate-form icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Riwayat Unduh</span></a>
-                                </li>
-
-                                <li class="<?php echo ($current_page == 'gantipassword.php') ? 'active' : ''; ?>">
-                                    <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
-                                </li>
-
-                                <li class="<?php echo ($current_page == 'profil.php') ? 'active' : ''; ?>">
-                                    <a href="profil.php" aria-expanded="false">
-                                        <?php 
-                                        $id_admin = $_SESSION['id'];
-                                        $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
-                                        $profil = mysqli_fetch_assoc($profil);
-                                        if($profil['user_foto'] == ""){ 
-                                            ?>
-                                            <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
-                                        <?php }else{ ?>
-                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 20px;height: 20px">
-                                        <?php } ?>
-                                        <span class="mini-click-non"><?php echo $_SESSION['nama']; ?> [ <b>Petugas</b> ]</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <!-- Script untuk Sidebar Toggle -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Fungsi untuk toggle sidebar
+                    const sidebarCollapseBtn = document.getElementById('sidebarCollapse');
+                    const sidebar = document.getElementById('sidebar');
+                    const contentWrapper = document.querySelector('.all-content-wrapper');
+                    
+                    if (sidebarCollapseBtn) {
+                        sidebarCollapseBtn.addEventListener('click', function() {
+                            // Toggle class untuk mini sidebar
+                            document.body.classList.toggle('mini-navbar');
+                            sidebar.classList.toggle('active');
+                            
+                            // Animasi smooth
+                            if (document.body.classList.contains('mini-navbar')) {
+                                sidebar.style.minWidth = '80px';
+                                sidebar.style.maxWidth = '80px';
+                                contentWrapper.style.marginLeft = '80px';
+                                
+                                // Hide text in mini mode
+                                const miniTexts = document.querySelectorAll('.mini-click-non');
+                                const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                                
+                                miniTexts.forEach(text => {
+                                    text.style.display = 'none';
+                                });
+                                
+                                sidebarTexts.forEach(text => {
+                                    text.style.display = 'none';
+                                });
+                                
+                            } else {
+                                sidebar.style.minWidth = '200px';
+                                sidebar.style.maxWidth = '200px';
+                                contentWrapper.style.marginLeft = '200px';
+                                
+                                // Show text in normal mode
+                                const miniTexts = document.querySelectorAll('.mini-click-non');
+                                const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                                
+                                miniTexts.forEach(text => {
+                                    text.style.display = 'inline';
+                                });
+                                
+                                sidebarTexts.forEach(text => {
+                                    text.style.display = 'block';
+                                });
+                            }
+                        });
+                    }
+                });
+            </script>
 </div>

@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Pratinjau</span></li>
                             </ul>
                         </div>
@@ -50,13 +50,14 @@
                         <div class="row">
                             <div class="col-lg-4">
 
+                                <div class="responsive-table-wrapper">
                                 <table class="table">
                                     <tr>
                                         <th>Kode Arsip</th>
                                         <td><?php echo $d['arsip_kode']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Waktu Upload</th>
+                                        <th>Waktu Unggah</th>
                                         <td><?php echo date('H:i:s  d-m-Y',strtotime($d['arsip_waktu_upload'])) ?></td>
                                     </tr>
                                     <tr>
@@ -72,7 +73,7 @@
                                         <td><?php echo $d['arsip_jenis']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Petugas Pengupload</th>
+                                        <th>Petugas Pengunggah</th>
                                         <td><?php echo $d['user_nama']; ?></td>
                                     </tr>
                                     <tr>
@@ -80,6 +81,7 @@
                                         <td><?php echo $d['arsip_keterangan']; ?></td>
                                     </tr>
                                 </table>
+                                </div>
 
                             </div>
                             <div class="col-lg-8">
@@ -87,14 +89,18 @@
                                 <?php 
                                 if($d['arsip_jenis'] == "png" || $d['arsip_jenis'] == "jpg" || $d['arsip_jenis'] == "gif" || $d['arsip_jenis'] == "jpeg"){
                                     ?>
-                                    <img src="../arsip/<?php echo $d['arsip_file']; ?>">
+                                    <img src="../arsip/<?php echo $d['arsip_file']; ?>" class="img-responsive">
                                     
                                     <?php
                                 }elseif($d['arsip_jenis'] == "pdf"){
                                     ?>
 
                                     <div class="pdf-singe-pro">
-                                        <a class="media" href="../arsip/<?php echo $d['arsip_file']; ?>"></a>
+                                        <iframe src="../arsip/<?php echo $d['arsip_file']; ?>" width="100%" height="600px" frameborder="0"></iframe>
+                                        <br><br>
+                                        <a href="../arsip/<?php echo $d['arsip_file']; ?>" class="btn btn-success" target="_blank">
+                                            <i class="fa fa-external-link"></i> Buka di Tab Baru
+                                        </a>
                                     </div>
 
                                     <?php
