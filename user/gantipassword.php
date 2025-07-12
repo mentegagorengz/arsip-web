@@ -51,7 +51,7 @@
                             <input type="password" class="form-control" placeholder="Masukkan Password Baru .." name="password" required="required" min="5">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Simpan">
+                            <input type="submit" class="btn btn-sm" style="background-color: #404040; color: white;" value="Simpan">
                         </div>
                     </form>
 

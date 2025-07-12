@@ -1,4 +1,4 @@
-    <!doctype html>
+<!doctype html>
     <html class="no-js" lang="en">
 
     <head>
@@ -10,6 +10,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#d80027">
     </head>
 
     <body>
@@ -142,9 +144,9 @@
 
 
 
-
         <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
     </body>
 
     </html>

@@ -30,7 +30,7 @@
 
 
             <div class="pull-right">
-                <a href="arsip_tambah.php?tipe=SURAT_KELUAR" class="btn btn-primary"><i class="fa fa-cloud"></i> Unggah Arsip</a>
+                <a href="arsip_tambah.php?tipe=SURAT_KELUAR" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-cloud"></i> Unggah Arsip</a>
             </div>
 
             <br>
@@ -118,8 +118,8 @@
                                                 Apakah anda yakin ingin menghapus data ini? <br>file dan semua yang berhubungan akan dihapus secara permanen.
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
-                                                <a href="arsip_hapus.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-primary"><i class="fa fa-check"></i> &nbsp; Ya, hapus</a>
+                                                <button type="button" class="btn btn-sm" style="background-color: #6C3B13; color: white;" data-dismiss="modal">Batalkan</button>
+                                                <a href="arsip_hapus.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-check"></i> &nbsp; Ya, hapus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                     <a class="btn btn-default" href="arsip_process.php?status=REJECTED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-times"></i></a>
                                     <a  class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>"><i class="fa fa-download"></i></a>
                                     <a  href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-search"></i> Pratinjau</a>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
+                                    <button type="button" class="btn btn-sm" style="background-color: #8B5C2A; color: white;" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </div>
