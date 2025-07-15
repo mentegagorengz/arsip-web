@@ -32,7 +32,7 @@
             <div class="panel panel">
 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upload arsip</h3>
+                    <h3 class="panel-title" style="color: #fff !important;">Upload arsip</h3>
                 </div>
                 <div class="panel-body">
 
@@ -116,7 +116,7 @@
 
                         <div class="form-group">
                             <label></label>
-                            <input type="submit" class="btn btn-primary" value="Upload">
+                            <input type="submit" class="btn btn-primary" style="color: #fff !important;" value="Upload">
                         </div>
 
                     </form>

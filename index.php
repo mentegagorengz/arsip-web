@@ -17,60 +17,100 @@
     <body>
 
         <style type="text/css">
-
-            .navbar-siad{
+            .navbar-siad {
                 background: #d80027;
                 border-radius: 0px;
                 border: 1px solid #d80027;
                 margin: 0px;
                 padding: 20px 0px;
             }
-
             .navbar-inverse .navbar-brand {
-
                 color: #fff;
-                
-
             }
-
             .navbar-inverse .navbar-nav > li > a {
-
                 color: #fff;
-
             }
             .navbar-siad > li > a {
-
                 color: #d80027 !important;
-
             }
-
-            .banner{
+            .banner {
                 background: #d80027;
                 border-radius: 0px;
                 border: 1px solid #d80027;
                 padding: 60px 0px;
-            }
-
-            .banner{
                 color: white;
             }
-
-            .banner a{
+            .banner a {
                 padding: 15px 25px;
                 color: white;
                 border: 1px solid white;
-                -webkit-transition:; 
                 transition: all 0.5s;
                 margin-right: 10px;
+                display: inline-block;
             }
-
-            .banner a:hover{
+            .banner a:hover {
                 text-decoration: none;
                 border: 1px dashed white;
             }
-
-            .banner p{
+            .banner p {
                 font-size: 13pt;
+            }
+            .banner h1 {
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 18px;
+            }
+            @media (max-width: 991px) {
+                .banner {
+                    padding: 40px 0px;
+                }
+                .banner h1 {
+                    font-size: 1.5rem;
+                }
+                .banner p {
+                    font-size: 1rem;
+                }
+            }
+            @media (max-width: 767px) {
+                .banner {
+                    padding: 25px 0px;
+                }
+                .banner .container {
+                    padding: 0 10px;
+                }
+                .banner h1 {
+                    font-size: 1.2rem;
+                }
+                .banner p {
+                    font-size: 0.95rem;
+                }
+                .banner a {
+                    padding: 12px 18px;
+                    font-size: 1rem;
+                    margin-bottom: 10px;
+                }
+                .banner img[alt="Logo"] {
+                    height: 180px !important;
+                    max-width: 90vw;
+                }
+                .banner .col-lg-6 {
+                    margin-bottom: 20px;
+                }
+            }
+            @media (max-width: 575px) {
+                .banner {
+                    padding: 10px 0px;
+                }
+                .banner h1 {
+                    font-size: 1rem;
+                }
+                .banner img[alt="Logo"] {
+                    height: 120px !important;
+                }
+                .banner a {
+                    padding: 10px 12px;
+                    font-size: 0.95rem;
+                }
             }
         </style>
 
@@ -116,28 +156,17 @@
 
         <div class="banner">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 text-center">
-                        <div style="margin-top: 140px;">
-                        <div>
-                        <img style="margin-top:-12px" src="assets/img/Logo.png" alt="Logo" height="300"> <b></b>
-                        </div>
-                            <h1>Selamat Datang di Aplikasi Elektronik Arsip</h1>
-                            <p>Aplikasi ini dirancang untuk mengoptimalkan pengelolaan arsip dinamis inaktif dengan fitur pencarian arsip secara cepat beserta laporan arsip</p>
-
-                            <br>
-                            <br>
-
-                            <a href="login.php">LOGIN</a>
-                        </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-12 text-center mb-4 mb-lg-0 d-flex flex-column justify-content-center align-items-center">
+                        <img style="margin-top:-12px; max-width: 100%; height: auto; background: transparent; box-shadow: none;" src="assets/img/Logo.png" alt="Logo" height="300">
+                        <h1 style="background: transparent;">Selamat Datang di Aplikasi Elektronik Arsip</h1>
+                        <p style="background: transparent;">Aplikasi ini dirancang untuk mengoptimalkan pengelolaan arsip dinamis inaktif dengan fitur pencarian arsip secara cepat beserta laporan arsip</p>
+                        <a href="login.php" style="background: transparent; border: 1px solid #fff; color: #fff;">LOGIN</a>
                     </div>
-                    <div class="col-lg-6 text-center">
-
-                        <img src="gambar/depan/1.png">
-                        
+                    <div class="col-lg-6 col-md-6 col-12 text-center d-flex flex-column justify-content-center align-items-center">
+                        <img src="gambar/depan/1.png" style="max-width: 100%; height: auto; background: transparent; box-shadow: none;">
                     </div>
                 </div>
-
             </div>
         </div>
 

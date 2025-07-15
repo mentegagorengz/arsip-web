@@ -33,7 +33,7 @@
         <div class="panel-body">
 
             <div class="pull-right">
-                <a href="user_tambah.php" class="btn btn-kategori"><i class="fa fa-plus"></i> Tambah pengguna</a>
+                <a href="user_tambah.php" class="btn btn-kategori"><i class="fa fa-plus" style="color: white !important;"></i> Tambah pengguna</a>
             </div>
             <br>
             <br>
@@ -79,7 +79,7 @@
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a href="user_edit.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-wrench"></i></a>
-                                    <a href="user_hapus.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-trash"></i></a>
+                                    <a href="user_hapus.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i style="color:#000 !important;" class="fa fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>

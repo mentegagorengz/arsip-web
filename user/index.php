@@ -78,25 +78,20 @@
 
                 <br>
 
-                <div class="product-sales-chart">
-
+                <div class="product-sales-chart" style="margin-bottom: 10px;">
                     <br>
                     <br>
                     <center>
-
-                        <h3>Selamat Datang</h3>
-                        <h4>Aplikasi Pengarsipan</h4>
-
+                        <h3 style="margin-bottom: 10px;">Selamat Datang</h3>
+                        <h4 style="margin-bottom: 30px;">Aplikasi Pengarsipan</h4>
                     </center>
                     <br>
                     <br>
-                    <br>
-
                 </div>
             </div>
-
+            
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="profile-card">
+                <div class="profile-card" style="margin-top: 40px;">
                     <?php 
                     $id = $_SESSION['id'];
                     $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");

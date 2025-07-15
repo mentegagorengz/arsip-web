@@ -410,7 +410,44 @@ if($_SESSION['role'] != "user"){
                     </div>
 
                     
-                    <div class="col-auto">
+
+                    <div class="col-auto" style="display: flex; align-items: center; gap: 10px;">
+                        <!-- Notifikasi Icon Mobile -->
+                        <div style="position: relative;">
+                            <button id="mobile-notif-btn" style="background: none; border: none; color: white; position: relative; padding: 0;">
+                                <i class="educate-icon educate-bell" style="font-size: 22px;"></i>
+                                <span class="indicator-nt" style="background-color: #fff; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+                            </button>
+                            <!-- Popup Notifikasi Mobile -->
+                            <div id="mobile-notif-popup" style="display: none; position: absolute; right: 0; top: 32px; width: 320px; max-width: 90vw; background: #fff; color: #333; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border-radius: 8px; z-index: 2000;">
+                                <div style="padding: 12px 16px; border-bottom: 1px solid #eee; background: #404040; color: #fff; border-radius: 8px 8px 0 0; font-weight: 600;">Notifikasi</div>
+                                <div style="max-height: 220px; overflow-y: auto; padding: 10px 0;">
+                                    <ul style="list-style: none; padding: 0 16px; margin: 0;">
+                                    <?php 
+                                    $id_saya = $_SESSION['id'];
+                                    $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id and arsip_petugas='$id_saya' ORDER BY riwayat_id DESC LIMIT 5");
+                                    if(mysqli_num_rows($arsip) > 0){
+                                        while($p = mysqli_fetch_array($arsip)){
+                                    ?>
+                                        <li style="margin-bottom: 10px;">
+                                            <a href="riwayat.php" style="text-decoration: none; color: #333;">
+                                                <div style="font-size: 13px;">
+                                                    <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
+                                                    <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                </div>
+                                            </a>
+                                        </li>
+                                    <?php }}else{ ?>
+                                        <li><span style="font-size: 13px; color: #888;">Tidak ada notifikasi.</span></li>
+                                    <?php } ?>
+                                    </ul>
+                                </div>
+                                <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
+                                    <a href="riwayat.php" style="font-size: 13px; color: #404040; text-decoration: underline;">Lihat Semua</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Profile Mobile -->
                         <a href="profil.php" style="color: white; text-decoration: none;">
                             <?php 
                                 $id_admin = $_SESSION['id'];
@@ -418,9 +455,9 @@ if($_SESSION['role'] != "user"){
                                 $profil = mysqli_fetch_assoc($profil);
                                 if($profil['user_foto'] == ""){ 
                             ?>
-                                <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                                <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
                             <?php }else{ ?>
-                                <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                                <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
                             <?php } ?>
                         </a>
                     </div>
@@ -428,12 +465,14 @@ if($_SESSION['role'] != "user"){
                 </div>
             </div>                                                                                              
 
+
             <!-- Mobile Sidebar -->
-            <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
+            <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto;">
                 <div style="background: #404040; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
                     <h5 style="margin: 0;">Menu</h5>
                     <button id="close-mobile-sidebar" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
                 </div>
+
                 <nav style="padding: 15px 0;">
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li>
@@ -489,6 +528,23 @@ if($_SESSION['role'] != "user"){
                 mobileMenuButton.addEventListener('click', openMobileSidebar);
                 closeSidebarButton.addEventListener('click', closeMobileSidebar);
                 sidebarOverlay.addEventListener('click', closeMobileSidebar);
+
+                // Notifikasi popup mobile
+                const notifBtn = document.getElementById('mobile-notif-btn');
+                const notifPopup = document.getElementById('mobile-notif-popup');
+                let notifOpen = false;
+                notifBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    notifOpen = !notifOpen;
+                    notifPopup.style.display = notifOpen ? 'block' : 'none';
+                });
+                // Tutup popup jika klik di luar
+                document.addEventListener('click', function(e) {
+                    if (notifOpen && !notifPopup.contains(e.target) && e.target !== notifBtn) {
+                        notifPopup.style.display = 'none';
+                        notifOpen = false;
+                    }
+                });
             });
             </script>
         </div>

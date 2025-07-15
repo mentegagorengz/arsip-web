@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 30px;">
                 <div class="profile-card">
                     <?php 
                     $id = $_SESSION['id'];
