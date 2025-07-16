@@ -86,7 +86,7 @@
                 </div>
             </div>
             
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="paddiing-bottom: 200px;">
                 <div class="profile-card" style="margin-top: 40px;">
                     <?php 
                     $id = $_SESSION['id'];
@@ -190,6 +190,15 @@ img {
 .status-text {
     color: #28a745;
     font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .product-sales-area {
+        padding-bottom: 80px; /* beri ruang untuk footer */
+    }
+    footer, .footer {
+        position: relative !important;
+    }
 }
 </style>
 
