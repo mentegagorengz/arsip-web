@@ -42,7 +42,7 @@
             <div class="panel panel">
 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Edit User</h3>
+                    <h3 class="panel-title">Edit Pengguna</h3>
                 </div>
                 <div class="panel-body">
                     

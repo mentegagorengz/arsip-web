@@ -50,7 +50,7 @@
                     <!-- <br> -->
                     <form method="post" action="arsip_aksi.php" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>User <?php if(isset($_GET['tipe'])){
+                            <label>Pengguna <?php if(isset($_GET['tipe'])){
                                 if($_GET["tipe"] == "SURAT_MASUK") echo "Pengirim";
                                 else echo "Penerima";
                             }?></label>
