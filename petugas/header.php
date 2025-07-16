@@ -338,7 +338,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <li>
                         <a href="logout.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333;">
                             <i class="educate-icon educate-pages" style="margin-right: 15px; color: #666;"></i>
-                            Logout
+                            Keluar
                         </a>
                     </li>
                 </ul>
@@ -401,7 +401,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </li>
 
                         <li>
-                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
+                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Keluar</span></a>
                         </li>
 
                     </ul>
