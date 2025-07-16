@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/login-mobile.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="manifest" href="manifest.json">
     <style>
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {

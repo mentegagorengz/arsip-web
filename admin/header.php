@@ -39,7 +39,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="manifest" href="manifest.json">
+
 
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
 
@@ -168,9 +168,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
         .mobile-menu-toggle {
             display: none;
         }
+        @media (max-width: 600px) {
+        .product-sales-area {
+            padding-bottom: 80px; /* beri ruang untuk footer */
+        }
+        footer, .footer {
+            position: relative !important;
+        }
+    }
     </style>
-    <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
     <!-- Sidebar Toggle Script -->
     <script>
@@ -347,7 +355,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <div class="all-content-wrapper">
         
-        <div class="header-advance-area">
+        <div class="header-advance-area" style="min-height: 100vh;">
             <div class="navbar navbar-light desktop-navbar" style="background-color: #d80027;">
                 <div class="container-fluid">
                     <div class="row">

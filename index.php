@@ -172,6 +172,19 @@
         <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="script.js"></script>
+        <script>
+        if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(error) {
+                console.log('ServiceWorker registration failed: ', error);
+            });
+        });
+        }
+        </script>
+        
     </body>
 
     </html>

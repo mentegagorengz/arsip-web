@@ -1,17 +1,41 @@
-
 <!-- Footer Section -->
-<footer class="main-footer text-sm" style="background-color: #B22222; color: white; padding: 10px 20px; margin-top: 20px;">
+<footer class="main-footer text-sm">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <strong>Copyright © <?php echo date('Y'); ?>. Aplikasi Pengarsipan.</strong> All rights reserved.
-                <div class="float-right d-none d-sm-inline-block">
-                    <b>Version</b> 1.0.0
+        <div id="footer-desktop">
+            <div class="row">
+                <div class="col-lg-12">
+                    <strong>Copyright © <?php echo date('Y'); ?>. Aplikasi Pengarsipan.</strong> All rights reserved.
+                    <div class="float-right d-none d-sm-inline-block">
+                        <b>Version</b> 1.0.0
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="footer-mobile">
+            <strong>© <?php echo date('Y'); ?> Arsip Web</strong><br>
+            <span style="font-size:0.9em;">Versi 1.0.0</span>
+        </div>
     </div>
 </footer>
+
+<script>
+function toggleFooter() {
+    var desktop = document.getElementById('footer-desktop');
+    var mobile = document.getElementById('footer-mobile');
+    var mainFooter = document.querySelector('.main-footer');
+    if(window.innerWidth <= 768) {
+        desktop.style.display = 'none';
+        mobile.style.display = 'block';
+        mainFooter.style.position = 'fixed';
+    } else {
+        desktop.style.display = 'block';
+        mobile.style.display = 'none';
+        mainFooter.style.position = 'none';
+    }
+}
+window.addEventListener('resize', toggleFooter);
+document.addEventListener('DOMContentLoaded', toggleFooter);
+</script>
 
 <!-- Footer Styles -->
 <style>
@@ -26,16 +50,20 @@
         right: 0;
         width: 100%;
         z-index: 1000;
-        display: block;
-        unicode-bidi: isolate;
         border-top: 1px solid #dee2e6;
-        color: #6c757d;
-        font-size: 0.875rem;
         background-color: #B22222 !important;
         box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        font-size: 0.875rem;
+        color: white;
     }
     
-    .main-footer strong {
+    #footer-mobile {
+        display: none;
+        text-align: center;
+        padding: 8px 0;
+    }
+    
+    .main-footer strong, .main-footer b {
         color: white;
     }
     
@@ -50,19 +78,8 @@
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
-        .main-footer .float-right {
-            float: none;
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        .main-footer {
-            text-align: center;
-        }
-        
         body {
-            margin-bottom: 90px; /* Increase bottom margin for mobile */
+            margin-bottom: 100px; /* Ensure footer does not overlap content on smaller screens */
         }
     }
 </style>

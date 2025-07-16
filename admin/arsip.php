@@ -1,5 +1,7 @@
 <?php include 'header.php'; ?>
 
+
+
 <div class="breadcome-area">
     <div class="container-fluid">
         <div class="row">
@@ -130,7 +132,7 @@
                                         <a class="btn btn-default" href="arsip_process.php?status=APPROVED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-check"></i></a>
                                         <a class="btn btn-default" href="arsip_process.php?status=REJECTED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-times"></i></a>
                                         <a  class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>" title="Unduh"><i style="color:#000" class="fa fa-download"></i></a>
-                                        <a  href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-search"></i> Pratinjau</a>
+                                        <a  href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i style="color:#000" class="fa fa-search"></i></a>
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
                                             <i class="fa fa-trash"></i>
                                         </button>

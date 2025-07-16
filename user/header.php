@@ -38,10 +38,9 @@ if($_SESSION['role'] != "user"){
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/mobile-responsive.css">
-    <link rel="manifest" href="manifest.json">
     
     <style>
-        /* Tampilkan navbar di desktop, sembunyikan di mobile */
+        /* Show navbar on desktop, hide on mobile */
         .desktop-navbar {
             display: block;
         }
@@ -51,37 +50,69 @@ if($_SESSION['role'] != "user"){
                 display: none !important;
             }
         }
-        
-        /* CSS untuk Sidebar Toggle Animation */
+
+        /* Sidebar active menu styling */
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a {
+            background: #d80027 !important;
+            color: white !important;
+            border-left: 4px solid #b70020;
+            position: relative;
+        }
+
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a:hover,
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a:focus {
+            background: #b70020 !important;
+            color: white !important;
+        }
+
+        /* Sidebar hover effect for other menu items */
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li:not(.active) > a:hover {
+            background: #f5f5f5 !important;
+            color: #d80027 !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Icon styling for active menu */
+        .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.active > a .educate-icon {
+            color: white !important;
+        }
+
+        /* Mobile menu active styling */
+        .mobile-menu-nav li.active > a {
+            background: #d80027 !important;
+            color: white !important;
+        }
+
+        .mobile-menu-nav li.active > a .educate-icon {
+            color: white !important;
+        }
+
+        .mobile-menu-nav li:not(.active) > a:hover {
+            background: #f5f5f5 !important;
+            color: #d80027 !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Sidebar Toggle Animation */
         #sidebar {
             transition: all 0.3s ease;
             min-width: 200px;
             max-width: 200px;
         }
-        
         #sidebar.active {
             min-width: 80px;
             max-width: 80px;
         }
-        
         .all-content-wrapper {
             margin-left: 200px;
             transition: all 0.3s ease;
         }
-        
         .mini-navbar .all-content-wrapper {
             margin-left: 80px;
         }
-        
-        .mini-click-non {
+        .mini-click-non, .sidebar-text {
             transition: opacity 0.3s ease;
         }
-        
-        .sidebar-text {
-            transition: opacity 0.3s ease;
-        }
-        
-        /* Gaya Responsif Mobile untuk Panel Pengguna */
         @media (max-width: 768px) {
             .left-sidebar-pro {
                 position: fixed;
@@ -90,16 +121,13 @@ if($_SESSION['role'] != "user"){
                 z-index: 1000;
                 width: 250px;
             }
-            
             .left-sidebar-pro.active {
                 left: 0;
             }
-            
             .all-content-wrapper {
                 margin-left: 0 !important;
                 padding-left: 0 !important;
             }
-            
             .mobile-menu-toggle {
                 display: block;
                 position: fixed;
@@ -112,12 +140,10 @@ if($_SESSION['role'] != "user"){
                 border-radius: 4px;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             }
-            
             .mobile-menu-toggle i {
                 font-size: 18px;
                 color: #333;
             }
-            
             .mobile-overlay {
                 display: none;
                 position: fixed;
@@ -128,36 +154,27 @@ if($_SESSION['role'] != "user"){
                 background: rgba(0,0,0,0.5);
                 z-index: 999;
             }
-            
             .mobile-overlay.active {
                 display: block;
             }
-            
             .header-top-area {
                 padding-left: 50px;
             }
         }
-        
         .mobile-menu-toggle {
             display: none;
         }
-        
-        /* Mobile menu active styling */
-        .mobile-menu-nav li.active > a {
-            background: #404040 !important;
-            color: white !important;
+        @media (max-width: 600px) {
+        .product-sales-area {
+            padding-bottom: 80px; /* beri ruang untuk footer */
         }
-
-        .mobile-menu-nav li.active > a .educate-icon {
-            color: white !important;
+        footer, .footer {
+            position: relative !important;
         }
-
-        .mobile-menu-nav li:not(.active) > a:hover {
-            background: #f5f5f5 !important;
-            color: #404040 !important;
-            transition: all 0.3s ease;
-        }
+    }
     </style>
+
+    
 
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
 

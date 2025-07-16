@@ -1,5 +1,5 @@
 <?php 
 
-$koneksi = mysqli_connect("localhost", "root", "" ,"db_arsio");
+$koneksi = mysqli_connect("localhost", "root", "" ,"db_arsip");
 
 ?>
