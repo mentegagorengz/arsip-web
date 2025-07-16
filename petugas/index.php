@@ -112,7 +112,7 @@
 <div class="product-sales-area mg-tb-30">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 30px;">
                 <div class="product-sales-chart">
                     <div class="portlet-title">
                         <div class="row">
@@ -140,8 +140,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="profile-card">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+                <div class="profile-card" style="margin-top: 30px;">
                     <?php 
                     $id = $_SESSION['id'];
                     $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
@@ -246,5 +246,14 @@ img {
     font-size: 13px;
 }
 </style>
+
+@media (max-width: 600px) {
+    .product-sales-area {
+        padding-bottom: 80px; /* beri ruang untuk footer */
+    }
+    footer, .footer {
+        position: relative !important;
+    }
+}
 
 <?php include 'footer.php'; ?>

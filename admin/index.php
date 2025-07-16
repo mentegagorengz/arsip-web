@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 30px; margin-bottom: 150px;">
                 <div class="profile-card">
                     <?php 
                     $id = $_SESSION['id'];
@@ -239,6 +239,15 @@ img {
     height: 8px;
     background: #28a745;
     border-radius: 50%;
+@media (max-width: 600px) {
+    .product-sales-area {
+        padding-bottom: 80px; /* beri ruang untuk footer */
+    }
+    footer, .footer {
+        position: relative !important;
+    }
+}
+
 }
 
 .status-text {

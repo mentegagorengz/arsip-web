@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
+                                <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
                                 <li><span class="bread-blod">Arsip</span></li>
                             </ul>
                         </div>
@@ -32,7 +32,7 @@
             <div class="panel panel">
 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upload arsip</h3>
+                    <h3 class="panel-title" style="color: #fff !important;">Upload arsip</h3>
                 </div>
                 <div class="panel-body">
 
@@ -116,7 +116,7 @@
 
                         <div class="form-group">
                             <label></label>
-                            <input type="submit" class="btn btn-primary" value="Upload">
+                            <input type="submit" class="btn btn-primary" style="color: #fff !important;" value="Upload">
                         </div>
 
                     </form>

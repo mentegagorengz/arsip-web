@@ -8,13 +8,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Dashboard</h4>
+                                <h4 style="margin-bottom: 0px">Dasbor</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
                                 <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Dashboard</span></li>
+                                <li><span class="bread-blod">Dasbor</span></li>
                             </ul>
                         </div>
                     </div>
@@ -28,7 +28,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <a href="arsip.php">
@@ -72,31 +71,23 @@
                                 </ul>
                             </div>
                         </a>
-
                     </div>
                 </div>
-
                 <br>
-
-                <div class="product-sales-chart">
-
+                <div class="product-sales-chart" style="margin-bottom: 10px;">
                     <br>
                     <br>
                     <center>
-
-                        <h3>Selamat Datang</h3>
-                        <h4>Aplikasi Pengarsipan</h4>
-
+                        <h3 style="margin-bottom: 10px;">Selamat Datang</h3>
+                        <h4 style="margin-bottom: 30px;">Aplikasi Pengarsipan</h4>
                     </center>
                     <br>
                     <br>
-                    <br>
-
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="profile-card">
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="paddiing-bottom: 200px;">
+                <div class="profile-card" style="margin-top: 40px;">
                     <?php 
                     $id = $_SESSION['id'];
                     $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
@@ -199,6 +190,15 @@ img {
 .status-text {
     color: #28a745;
     font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .product-sales-area {
+        padding-bottom: 80px; /* beri ruang untuk footer */
+    }
+    footer, .footer {
+        position: relative !important;
+    }
 }
 </style>
 

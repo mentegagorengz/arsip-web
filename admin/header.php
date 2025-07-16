@@ -169,6 +169,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
         }
     </style>
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
     <!-- Sidebar Toggle Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -221,7 +223,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             }
         });
     </script>
+
 </head>
+
 <body>
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 2px;">
@@ -339,9 +343,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             }
         });
     </script>
-    
-    <!-- End Left menu area -->
-    <!-- Start Welcome area -->
+
     <div class="all-content-wrapper">
         
         <div class="header-advance-area">
@@ -374,7 +376,42 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item">
+                                                <li class="nav-item" style="display: flex; align-items: center; gap: 10px;">
+                                                    <!-- Notifikasi Icon Desktop -->
+                                                    <div style="position: relative;">
+                                                        <button id="desktop-notif-btn" style="background: none; border: none; color: white; position: relative; padding: 0;">
+                                                            <i class="educate-icon educate-bell" style="font-size: 22px;"></i>
+                                                            <span class="indicator-nt" style="background-color: #fff; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+                                                        </button>
+                                                        <!-- Popup Notifikasi Desktop -->
+                                                        <div id="desktop-notif-popup" style="display: none; position: absolute; right: 0; top: 32px; width: 340px; max-width: 95vw; background: #fff; color: #333; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border-radius: 8px; z-index: 2000;">
+                                                            <div style="padding: 12px 16px; border-bottom: 1px solid #eee; background: #d80027; color: #fff; border-radius: 8px 8px 0 0; font-weight: 600;">Notifikasi</div>
+                                                            <div style="max-height: 220px; overflow-y: auto; padding: 10px 0;">
+                                                                <ul style="list-style: none; padding: 0 16px; margin: 0;">
+                                                                <?php 
+                                                                $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id ORDER BY riwayat_id DESC LIMIT 5");
+                                                                if(mysqli_num_rows($arsip) > 0){
+                                                                    while($p = mysqli_fetch_array($arsip)){
+                                                                ?>
+                                                                    <li style="margin-bottom: 10px;">
+                                                                        <a href="riwayat.php" style="text-decoration: none; color: #333;">
+                                                                            <div style="font-size: 13px;">
+                                                                                <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
+                                                                                <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                <?php }}else{ ?>
+                                                                    <li><span style="font-size: 13px; color: #888;">Tidak ada notifikasi.</span></li>
+                                                                <?php } ?>
+                                                                </ul>
+                                                            </div>
+                                                            <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
+                                                                <a href="riwayat.php" style="font-size: 13px; color: #d80027; text-decoration: underline;">Lihat Semua</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Profile Desktop -->
                                                     <a href="profil.php" class="nav-link" style="color: white; text-decoration: none;">
                                                         <?php 
                                                         $id_admin = $_SESSION['id'];
@@ -382,9 +419,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                                         $profil = mysqli_fetch_assoc($profil);
                                                         if($profil['user_foto'] == ""){ 
                                                             ?>
-                                                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                                                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
                                                         <?php }else{ ?>
-                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
                                                         <?php } ?>
                                                         <span class="admin-name" style="font-weight: 500;"><?php echo $_SESSION['nama']; ?> | Administrator</span>
                                                     </a>
@@ -398,6 +435,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </div>
                 </div>
             </div>
+
+
     <!-- Mobile Menu start -->
     <div class="mobile-menu-area" style="background-color: #d80027;">
         <div class="container-fluid" style="padding: 10px 15px;">
@@ -418,7 +457,42 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             Aplikasi Pengarsipan
                     </h5>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto" style="display: flex; align-items: center; gap: 10px;">
+                    <!-- Notifikasi Icon Mobile -->
+                    <div style="position: relative;">
+                        <button id="mobile-notif-btn" style="background: none; border: none; color: white; position: relative; padding: 0;">
+                            <i class="educate-icon educate-bell" style="font-size: 22px;"></i>
+                            <span class="indicator-nt" style="background-color: #fff; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+                        </button>
+                        <!-- Popup Notifikasi Mobile -->
+                        <div id="mobile-notif-popup" style="display: none; position: absolute; right: 0; top: 32px; width: 320px; max-width: 90vw; background: #fff; color: #333; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border-radius: 8px; z-index: 2000;">
+                            <div style="padding: 12px 16px; border-bottom: 1px solid #eee; background: #d80027; color: #fff; border-radius: 8px 8px 0 0; font-weight: 600;">Notifikasi</div>
+                            <div style="max-height: 220px; overflow-y: auto; padding: 10px 0;">
+                                <ul style="list-style: none; padding: 0 16px; margin: 0;">
+                                <?php 
+                                $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id ORDER BY riwayat_id DESC LIMIT 5");
+                                if(mysqli_num_rows($arsip) > 0){
+                                    while($p = mysqli_fetch_array($arsip)){
+                                ?>
+                                    <li style="margin-bottom: 10px;">
+                                        <a href="riwayat.php" style="text-decoration: none; color: #333;">
+                                            <div style="font-size: 13px;">
+                                                <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
+                                                <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php }}else{ ?>
+                                    <li><span style="font-size: 13px; color: #888;">Tidak ada notifikasi.</span></li>
+                                <?php } ?>
+                                </ul>
+                            </div>
+                            <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
+                                <a href="riwayat.php" style="font-size: 13px; color: #d80027; text-decoration: underline;">Lihat Semua</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profile Mobile -->
                     <a href="profil.php" style="color: white; text-decoration: none;">
                         <?php 
                             $id_admin = $_SESSION['id'];
@@ -426,14 +500,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             $profil = mysqli_fetch_assoc($profil);
                             if($profil['user_foto'] == ""){ 
                         ?>
-                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
                         <?php }else{ ?>
-                            <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
+                            <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
                         <?php } ?>
                     </a>
                 </div>
             </div>
         </div>
+
+
         <!-- Mobile Sidebar -->
         <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
             <div style="background: #d80027; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
@@ -505,6 +581,48 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </nav>
         </div>
+
+
         <!-- Mobile Overlay -->
         <div id="mobile-sidebar-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999;"></div>
     </div>
+
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Desktop notif
+        const desktopNotifBtn = document.getElementById('desktop-notif-btn');
+        const desktopNotifPopup = document.getElementById('desktop-notif-popup');
+        let desktopNotifOpen = false;
+        if(desktopNotifBtn && desktopNotifPopup){
+            desktopNotifBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                desktopNotifOpen = !desktopNotifOpen;
+                desktopNotifPopup.style.display = desktopNotifOpen ? 'block' : 'none';
+            });
+            document.addEventListener('click', function(e) {
+                if (desktopNotifOpen && !desktopNotifPopup.contains(e.target) && e.target !== desktopNotifBtn) {
+                    desktopNotifPopup.style.display = 'none';
+                    desktopNotifOpen = false;
+                }
+            });
+        }
+        // Mobile notif
+        const mobileNotifBtn = document.getElementById('mobile-notif-btn');
+        const mobileNotifPopup = document.getElementById('mobile-notif-popup');
+        let mobileNotifOpen = false;
+        if(mobileNotifBtn && mobileNotifPopup){
+            mobileNotifBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileNotifOpen = !mobileNotifOpen;
+                mobileNotifPopup.style.display = mobileNotifOpen ? 'block' : 'none';
+            });
+            document.addEventListener('click', function(e) {
+                if (mobileNotifOpen && !mobileNotifPopup.contains(e.target) && e.target !== mobileNotifBtn) {
+                    mobileNotifPopup.style.display = 'none';
+                    mobileNotifOpen = false;
+                }
+            });
+        }
+    });
+    </script>
