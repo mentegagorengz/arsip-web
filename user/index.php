@@ -192,14 +192,7 @@ img {
     font-size: 13px;
 }
 
-@media (max-width: 600px) {
-    .product-sales-area {
-        padding-bottom: 80px; /* beri ruang untuk footer */
-    }
-    footer, .footer {
-        position: relative !important;
-    }
-}
+
 </style>
 
 <?php include 'footer.php'; ?>

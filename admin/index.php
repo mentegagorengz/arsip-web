@@ -239,14 +239,6 @@ img {
     height: 8px;
     background: #28a745;
     border-radius: 50%;
-@media (max-width: 600px) {
-    .product-sales-area {
-        padding-bottom: 80px; /* beri ruang untuk footer */
-    }
-    footer, .footer {
-        position: relative !important;
-    }
-}
 
 }
 
@@ -254,6 +246,7 @@ img {
     color: #28a745;
     font-size: 13px;
 }
+
 </style>
 
 

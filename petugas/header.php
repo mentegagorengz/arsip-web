@@ -173,6 +173,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
         .mobile-menu-toggle {
             display: none;
         }
+        @media (max-width: 600px) {
+        .product-sales-area {
+            padding-bottom: 80px; /* beri ruang untuk footer */
+        }
+        footer, .footer {
+            position: relative !important;
+        }
+    }
     </style>
 
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
