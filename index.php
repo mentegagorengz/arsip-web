@@ -120,12 +120,7 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header ">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    
                 </div>
                
 
@@ -154,18 +149,16 @@
         </nav>
         
 
-        <div class="banner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-12 text-center mb-4 mb-lg-0 d-flex flex-column justify-content-center align-items-center">
-                        <img style="margin-top:-12px; max-width: 100%; height: auto; background: transparent; box-shadow: none;" src="assets/img/Logo.png" alt="Logo" height="300">
-                        <h1 style="background: transparent;">Selamat Datang di Aplikasi Elektronik Arsip</h1>
-                        <p style="background: transparent;">Aplikasi ini dirancang untuk mengoptimalkan pengelolaan arsip dinamis inaktif dengan fitur pencarian arsip secara cepat beserta laporan arsip</p>
-                        <a href="login.php" style="background: transparent; border: 1px solid #fff; color: #fff;">LOGIN</a>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 text-center d-flex flex-column justify-content-center align-items-center">
-                        <img src="gambar/depan/1.png" style="max-width: 100%; height: auto; background: transparent; box-shadow: none;">
-                    </div>
+        <div class="banner" style="width:100vw;height:100vh;min-height:100vh;position:fixed;top:0;left:0;z-index:1;display:flex;align-items:center;">
+            <div class="row align-items-center w-100" style="margin:0;">
+                <div class="col-lg-6 col-md-6 col-12 text-center mb-4 mb-lg-0 d-flex flex-column justify-content-center align-items-center">
+                    <img style="margin-top:-12px; max-width: 100%; height: auto; background: transparent; box-shadow: none;" src="assets/img/Logo.png" alt="Logo" height="300">
+                    <h1 style="background: transparent;">Selamat Datang di Aplikasi Elektronik Arsip</h1>
+                    <p style="background: transparent;">Aplikasi ini dirancang untuk mengoptimalkan pengelolaan arsip dinamis inaktif dengan fitur pencarian arsip secara cepat beserta laporan arsip</p>
+                    <a href="login.php" style="background: transparent; border: 1px solid #fff; color: #fff;">LOGIN</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 text-center d-flex flex-column justify-content-center align-items-center">
+                    <img src="gambar/depan/1.png" style="max-width: 100%; height: auto; background: transparent; box-shadow: none;">
                 </div>
             </div>
         </div>

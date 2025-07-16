@@ -36,7 +36,7 @@
                 </div>
                 <div class="panel-body">
 
-                    <a href="arsip.php" class="btn btn-sm btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <a href="arsip.php" class="btn btn-sm btn-primary" style=""><i class="fa fa-arrow-left"></i> Kembali</a>
 
                     <br>
                     <br>

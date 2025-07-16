@@ -8,13 +8,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Dashboard</h4>
+                                <h4 style="margin-bottom: 0px">Dasbor</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
                                 <li><a href="#">Beranda</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Dashboard</span></li>
+                                <li><span class="bread-blod">Dasbor</span></li>
                             </ul>
                         </div>
                     </div>
@@ -28,7 +28,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <a href="arsip.php">
@@ -72,12 +71,9 @@
                                 </ul>
                             </div>
                         </a>
-
                     </div>
                 </div>
-
                 <br>
-
                 <div class="product-sales-chart" style="margin-bottom: 10px;">
                     <br>
                     <br>

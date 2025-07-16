@@ -169,6 +169,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
         }
     </style>
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
     <!-- Sidebar Toggle Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -221,7 +223,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             }
         });
     </script>
+
 </head>
+
 <body>
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 2px;">
@@ -339,9 +343,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             }
         });
     </script>
-    
-    <!-- End Left menu area -->
-    <!-- Start Welcome area -->
+
     <div class="all-content-wrapper">
         
         <div class="header-advance-area">
@@ -374,7 +376,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-
                                                 <li class="nav-item" style="display: flex; align-items: center; gap: 10px;">
                                                     <!-- Notifikasi Icon Desktop -->
                                                     <div style="position: relative;">
@@ -396,7 +397,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                                                         <a href="riwayat.php" style="text-decoration: none; color: #333;">
                                                                             <div style="font-size: 13px;">
                                                                                 <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
-                                                                                <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                                                <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
                                                                             </div>
                                                                         </a>
                                                                     </li>
@@ -434,6 +435,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </div>
                 </div>
             </div>
+
+
     <!-- Mobile Menu start -->
     <div class="mobile-menu-area" style="background-color: #d80027;">
         <div class="container-fluid" style="padding: 10px 15px;">
@@ -505,6 +508,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
             </div>
         </div>
+
+
         <!-- Mobile Sidebar -->
         <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
             <div style="background: #d80027; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
@@ -576,9 +581,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </nav>
         </div>
+
+
         <!-- Mobile Overlay -->
         <div id="mobile-sidebar-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999;"></div>
     </div>
+
+    
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Desktop notif

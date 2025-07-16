@@ -162,70 +162,8 @@ if($_SESSION['role'] != "user"){
 
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
-    <!-- Script untuk Sidebar Toggle -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fungsi untuk toggle sidebar
-            const sidebarCollapseBtn = document.getElementById('sidebarCollapse');
-            const sidebar = document.getElementById('sidebar');
-            const contentWrapper = document.querySelector('.all-content-wrapper');
-            
-            if (sidebarCollapseBtn) {
-                sidebarCollapseBtn.addEventListener('click', function() {
-                    // Toggle class untuk mini sidebar
-                    document.body.classList.toggle('mini-navbar');
-                    sidebar.classList.toggle('active');
-                    
-                    // Animasi smooth
-                    if (document.body.classList.contains('mini-navbar')) {
-                        sidebar.style.minWidth = '80px';
-                        sidebar.style.maxWidth = '80px';
-                        contentWrapper.style.marginLeft = '80px';
-                        
-                        // Hide text in mini mode
-                        const miniTexts = document.querySelectorAll('.mini-click-non');
-                        const sidebarTexts = document.querySelectorAll('.sidebar-text');
-                        
-                        miniTexts.forEach(text => {
-                            text.style.display = 'none';
-                        });
-                        
-                        sidebarTexts.forEach(text => {
-                            text.style.display = 'none';
-                        });
-                        
-                    } else {
-                        sidebar.style.minWidth = '200px';
-                        sidebar.style.maxWidth = '200px';
-                        contentWrapper.style.marginLeft = '200px';
-                        
-                        // Show text in normal mode
-                        const miniTexts = document.querySelectorAll('.mini-click-non');
-                        const sidebarTexts = document.querySelectorAll('.sidebar-text');
-                        
-                        miniTexts.forEach(text => {
-                            text.style.display = 'inline';
-                        });
-                        
-                        sidebarTexts.forEach(text => {
-                            text.style.display = 'block';
-                        });
-                    }
-                });
-            }
-        });
-    </script>
-
 </head>
 <body>
-    <!-- Tombol Toggle Menu Mobile -->
-    <!-- <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-        <i class="fa fa-bars"></i>
-    </button> -->
-    
-    <!-- Mobile Overlay -->
-
-    
     <div class="left-sidebar-pro">
         <nav id="sidebar" style="max-width: 20px;">
             <div class="sidebar-header" style="padding-top: 10px; padding-bottom: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
@@ -289,98 +227,103 @@ if($_SESSION['role'] != "user"){
     <div class="all-content-wrapper">
         <div class="header-advance-area">
             <div class="navbar navbar-light desktop-navbar" style="background-color: #404040;">
-                <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="header-top-wraper">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="header-top-wraper">
-                                <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                                        <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #404040; border: none;">
-                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
-                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
-                                                <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
-                                        <div class="header-top-menu tabl-d-n">
-                                            <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="index.php" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Beranda</a></li>
-                                                <li class="nav-item"><a href="arsip.php" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Semua Arsip</a></li>
-                                                <li class="nav-item dropdown res-dis-nn">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Kategori <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
-                                                    <div role="menu" class="dropdown-menu animated zoomIn">
-                                                     <?php 
-                                                     $no = 1;
-                                                     $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
-                                                     while($p = mysqli_fetch_array($kategori)){
-                                                        ?>
-                                                        <a href="arsip.php?kategori=<?php echo $p['kategori_id'] ?>" class="dropdown-item"><?php echo $p['kategori_nama'] ?></a>
-                                                        <?php 
-                                                        }
-                                                        ?>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                    </div>
+                        <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                        <div class="menu-switcher-pro">
+                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn" style="background-color: #404040; border: none;">
+                            <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                            <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                            <div style="width: 20px; height: 2px; background-color: white; margin: 3px 0;"></div>
+                            </button>
+                        </div>
+                        </div>
+                        <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                        <div class="header-top-menu tabl-d-n">
+                            <ul class="nav navbar-nav mai-top-nav">
+                            <li class="nav-item"><a href="index.php" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Beranda</a></li>
+                            <li class="nav-item"><a href="arsip.php" class="nav-link" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Semua Arsip</a></li>
+                            <li class="nav-item dropdown res-dis-nn">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle" style="color: white; font-size: 18px; font-weight: 600; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; height: 50px;">Kategori <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                <div role="menu" class="dropdown-menu animated zoomIn">
+                                 <?php 
+                                 $no = 1;
+                                 $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
+                                 while($p = mysqli_fetch_array($kategori)){
+                                ?>
+                                <a href="arsip.php?kategori=<?php echo $p['kategori_id'] ?>" class="dropdown-item"><?php echo $p['kategori_nama'] ?></a>
+                                <?php 
+                                }
+                                ?>
                                 </div>
-                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                    <div class="header-right-info">
-                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                        <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle" ><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt" style="background-color: #fff"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">                                        <div class="notification-single-top">
-                                            <h1>Notifikasi</h1>
-                                        </div>
-                                                        <ul class="notification-menu">
-                                                            <?php 
-                                                            $id_saya = $_SESSION['id'];
-                                                            $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id and arsip_petugas='$id_saya' ORDER BY riwayat_id DESC");
-                                                            while($p = mysqli_fetch_array($arsip)){
-                                                                ?>
-                                                                <li>
-                                                                    <a href="riwayat.php">
-                                                                        <div class="notification-content">
-                                                                           <p>
-                                                                            <small><i><?php echo date('H:i:s  d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small>
-                                                                            <br>
-                                                                            <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
-                                                                        </p>
-                                                                    </div>
-                                                                </a>
-                                                                <hr>
-                                                            </li>
-                                                            <?php 
-                                                        }
-                                                        ?>
-                                                    </ul>                                                    <div class="notification-view">
-                                        <a href="#">Lihat Semua Notifikasi</a>
-                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nav-item">
-                                                    <a href="profil.php" class="nav-link" style="color: white; text-decoration: none;">
-                                                        <?php 
-                                                        $id_admin = $_SESSION['id'];
-                                                        $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
-                                                        $profil = mysqli_fetch_assoc($profil);
-                                                        if($profil['user_foto'] == ""){ 
-                                                            ?>
-                                                            <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
-                                                        <?php }else{ ?>
-                                                        <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
-                                                        <?php } ?>
-                                                        <span class="admin-name" style="font-weight: 500;"><?php echo $_SESSION['nama']; ?> | Pengguna</span>
-                                                    </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            </li>
+                            </ul>
                         </div>
                     </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                        <div class="header-right-info">
+                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                        <li class="nav-item" style="display: flex; align-items: center; gap: 10px;">
+                            <!-- Notifikasi Icon Desktop -->
+                            <div style="position: relative;">
+                                <button id="desktop-notif-btn" style="background: none; border: none; color: white; position: relative; padding: 0;">
+                                    <i class="educate-icon educate-bell" style="font-size: 22px;"></i>
+                                    <span class="indicator-nt" style="background-color: #fff; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+                                </button>
+                                <!-- Popup Notifikasi Desktop -->
+                                <div id="desktop-notif-popup" style="display: none; position: absolute; right: 0; top: 32px; width: 340px; max-width: 95vw; background: #fff; color: #333; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border-radius: 8px; z-index: 2000;">
+                                    <div style="padding: 12px 16px; border-bottom: 1px solid #eee; background: #404040; color: #fff; border-radius: 8px 8px 0 0; font-weight: 600;">Notifikasi</div>
+                                    <div style="max-height: 220px; overflow-y: auto; padding: 10px 0;">
+                                        <ul style="list-style: none; padding: 0 16px; margin: 0;">
+                                        <?php 
+                                        $id_saya = $_SESSION['id'];
+                                        $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id and riwayat_user='$id_saya' ORDER BY riwayat_id DESC LIMIT 5");
+                                        if(mysqli_num_rows($arsip) > 0){
+                                            while($p = mysqli_fetch_array($arsip)){
+                                        ?>
+                                            <li style="margin-bottom: 10px;">
+                                                <a href="riwayat.php" style="text-decoration: none; color: #333;">
+                                                    <div style="font-size: 13px;">
+                                                        <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
+                                                        <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        <?php }}else{ ?>
+                                            <li><span style="font-size: 13px; color: #888;">Tidak ada notifikasi.</span></li>
+                                        <?php } ?>
+                                        </ul>
+                                    </div>
+                                    <!-- <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
+                                        <a href="riwayat.php" style="font-size: 13px; color: #404040; text-decoration: underline;">Lihat Semua</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- Profile Desktop -->
+                            <a href="profil.php" class="nav-link" style="color: white; text-decoration: none;">
+                                <?php 
+                                $id_admin = $_SESSION['id'];
+                                $profil = mysqli_query($koneksi,"select * from user where user_id='$id_admin'");
+                                $profil = mysqli_fetch_assoc($profil);
+                                if($profil['user_foto'] == ""){ 
+                                ?>
+                                    <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
+                                <?php }else{ ?>
+                                    <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
+                                <?php } ?>
+                                <span class="admin-name" style="font-weight: 500;"><?php echo $_SESSION['nama']; ?> | Pengguna</span>
+                            </a>
+                        </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
                 </div>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -389,7 +332,6 @@ if($_SESSION['role'] != "user"){
         <div class="mobile-menu-area" style="background-color: #404040;">
             <div class="container-fluid" style="padding: 10px 15px;">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin: 0;">
-                    
                     <div class="col-auto">
                         <button id="mobile-menu-button" type="button" class="btn p-0" 
                                 style="background: none; border: none; color: white;">
@@ -401,16 +343,11 @@ if($_SESSION['role'] != "user"){
                             </svg>
                         </button>
                     </div>
-
-                    
                     <div class="col text-center">
                         <h5 style="color: white; margin: 0; font-weight: 500; font-size: 18px;">
                                 Aplikasi Pengarsipan
                         </h5>
                     </div>
-
-                    
-
                     <div class="col-auto" style="display: flex; align-items: center; gap: 10px;">
                         <!-- Notifikasi Icon Mobile -->
                         <div style="position: relative;">
@@ -425,7 +362,7 @@ if($_SESSION['role'] != "user"){
                                     <ul style="list-style: none; padding: 0 16px; margin: 0;">
                                     <?php 
                                     $id_saya = $_SESSION['id'];
-                                    $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id and arsip_petugas='$id_saya' ORDER BY riwayat_id DESC LIMIT 5");
+                                    $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id and riwayat_user='$id_saya' ORDER BY riwayat_id DESC LIMIT 5");
                                     if(mysqli_num_rows($arsip) > 0){
                                         while($p = mysqli_fetch_array($arsip)){
                                     ?>
@@ -433,7 +370,7 @@ if($_SESSION['role'] != "user"){
                                             <a href="riwayat.php" style="text-decoration: none; color: #333;">
                                                 <div style="font-size: 13px;">
                                                     <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
-                                                    <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                    <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
                                                 </div>
                                             </a>
                                         </li>
@@ -442,9 +379,9 @@ if($_SESSION['role'] != "user"){
                                     <?php } ?>
                                     </ul>
                                 </div>
-                                <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
+                                <!-- <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
                                     <a href="riwayat.php" style="font-size: 13px; color: #404040; text-decoration: underline;">Lihat Semua</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- Profile Mobile -->
@@ -455,24 +392,21 @@ if($_SESSION['role'] != "user"){
                                 $profil = mysqli_fetch_assoc($profil);
                                 if($profil['user_foto'] == ""){ 
                             ?>
-                                <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
+                                <img src="../gambar/sistem/user.png" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
                             <?php }else{ ?>
-                                <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 0; vertical-align: middle;">
+                                <img src="../gambar/user/<?php echo $profil['user_foto'] ?>" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 8px; vertical-align: middle;">
                             <?php } ?>
                         </a>
                     </div>
-                        
                 </div>
-            </div>                                                                                              
-
+            </div>
 
             <!-- Mobile Sidebar -->
-            <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto;">
+            <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: white; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
                 <div style="background: #404040; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
                     <h5 style="margin: 0;">Menu</h5>
                     <button id="close-mobile-sidebar" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
                 </div>
-
                 <nav style="padding: 15px 0;">
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li>
@@ -528,24 +462,154 @@ if($_SESSION['role'] != "user"){
                 mobileMenuButton.addEventListener('click', openMobileSidebar);
                 closeSidebarButton.addEventListener('click', closeMobileSidebar);
                 sidebarOverlay.addEventListener('click', closeMobileSidebar);
-
-                // Notifikasi popup mobile
-                const notifBtn = document.getElementById('mobile-notif-btn');
-                const notifPopup = document.getElementById('mobile-notif-popup');
-                let notifOpen = false;
-                notifBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    notifOpen = !notifOpen;
-                    notifPopup.style.display = notifOpen ? 'block' : 'none';
-                });
-                // Tutup popup jika klik di luar
-                document.addEventListener('click', function(e) {
-                    if (notifOpen && !notifPopup.contains(e.target) && e.target !== notifBtn) {
-                        notifPopup.style.display = 'none';
-                        notifOpen = false;
-                    }
-                });
             });
             </script>
+
+            <!-- Script untuk Sidebar Toggle -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Fungsi untuk toggle sidebar
+                    const sidebarCollapseBtn = document.getElementById('sidebarCollapse');
+                    const sidebar = document.getElementById('sidebar');
+                    const contentWrapper = document.querySelector('.all-content-wrapper');
+                    
+                    if (sidebarCollapseBtn) {
+                        sidebarCollapseBtn.addEventListener('click', function() {
+                            // Toggle class untuk mini sidebar
+                            document.body.classList.toggle('mini-navbar');
+                            sidebar.classList.toggle('active');
+                            
+                            // Animasi smooth
+                            if (document.body.classList.contains('mini-navbar')) {
+                                sidebar.style.minWidth = '80px';
+                                sidebar.style.maxWidth = '80px';
+                                contentWrapper.style.marginLeft = '80px';
+                                
+                                // Hide text in mini mode
+                                const miniTexts = document.querySelectorAll('.mini-click-non');
+                                const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                                
+                                miniTexts.forEach(text => {
+                                    text.style.display = 'none';
+                                });
+                                
+                                sidebarTexts.forEach(text => {
+                                    text.style.display = 'none';
+                                });
+                                
+                            } else {
+                                sidebar.style.minWidth = '200px';
+                                sidebar.style.maxWidth = '200px';
+                                contentWrapper.style.marginLeft = '200px';
+                                
+                                // Show text in normal mode
+                                const miniTexts = document.querySelectorAll('.mini-click-non');
+                                const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                                
+                                miniTexts.forEach(text => {
+                                    text.style.display = 'inline';
+                                });
+                                
+                                sidebarTexts.forEach(text => {
+                                    text.style.display = 'block';
+                                });
+                            }
+                        });
+                    }
+                });
+            </script>
+
+            <!-- Sidebar Toggle Script -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Sidebar toggle for desktop
+                    const sidebarCollapseBtn = document.getElementById('sidebarCollapse');
+                    const sidebar = document.getElementById('sidebar');
+                    const contentWrapper = document.querySelector('.all-content-wrapper');
+                    if (sidebarCollapseBtn) {
+                        sidebarCollapseBtn.addEventListener('click', function() {
+                            document.body.classList.toggle('mini-navbar');
+                            sidebar.classList.toggle('active');
+                            if (document.body.classList.contains('mini-navbar')) {
+                                sidebar.style.minWidth = '80px';
+                                sidebar.style.maxWidth = '80px';
+                                contentWrapper.style.marginLeft = '80px';
+                                const miniTexts = document.querySelectorAll('.mini-click-non');
+                                const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                                miniTexts.forEach(text => { text.style.display = 'none'; });
+                                sidebarTexts.forEach(text => { text.style.display = 'none'; });
+                            } else {
+                                sidebar.style.minWidth = '200px';
+                                sidebar.style.maxWidth = '200px';
+                                contentWrapper.style.marginLeft = '200px';
+                                const miniTexts = document.querySelectorAll('.mini-click-non');
+                                const sidebarTexts = document.querySelectorAll('.sidebar-text');
+                                miniTexts.forEach(text => { text.style.display = 'inline'; });
+                                sidebarTexts.forEach(text => { text.style.display = 'block'; });
+                            }
+                        });
+                    }
+                    // Mobile sidebar toggle
+                    const mobileMenuButton = document.getElementById('mobile-menu-button');
+                    const mobileSidebar = document.getElementById('mobile-sidebar');
+                    const closeSidebarButton = document.getElementById('close-mobile-sidebar');
+                    const sidebarOverlay = document.getElementById('mobile-sidebar-overlay');
+                    if (mobileMenuButton && mobileSidebar && closeSidebarButton && sidebarOverlay) {
+                        function openMobileSidebar() {
+                            mobileSidebar.style.left = '0';
+                            sidebarOverlay.style.display = 'block';
+                            document.body.style.overflow = 'hidden';
+                        }
+                        function closeMobileSidebar() {
+                            mobileSidebar.style.left = '-100%';
+                            sidebarOverlay.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                        mobileMenuButton.addEventListener('click', openMobileSidebar);
+                        closeSidebarButton.addEventListener('click', closeMobileSidebar);
+                        sidebarOverlay.addEventListener('click', closeMobileSidebar);
+                    }
+                });
+            </script>
+
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Desktop notif
+                const desktopNotifBtn = document.getElementById('desktop-notif-btn');
+                const desktopNotifPopup = document.getElementById('desktop-notif-popup');
+                let desktopNotifOpen = false;
+                if(desktopNotifBtn && desktopNotifPopup){
+                    desktopNotifBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        desktopNotifOpen = !desktopNotifOpen;
+                        desktopNotifPopup.style.display = desktopNotifOpen ? 'block' : 'none';
+                    });
+                    document.addEventListener('click', function(e) {
+                        if (desktopNotifOpen && !desktopNotifPopup.contains(e.target) && e.target !== desktopNotifBtn) {
+                            desktopNotifPopup.style.display = 'none';
+                            desktopNotifOpen = false;
+                        }
+                    });
+                }
+                // Mobile notif
+                const mobileNotifBtn = document.getElementById('mobile-notif-btn');
+                const mobileNotifPopup = document.getElementById('mobile-notif-popup');
+                let mobileNotifOpen = false;
+                if(mobileNotifBtn && mobileNotifPopup){
+                    mobileNotifBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        mobileNotifOpen = !mobileNotifOpen;
+                        mobileNotifPopup.style.display = mobileNotifOpen ? 'block' : 'none';
+                    });
+                    document.addEventListener('click', function(e) {
+                        if (mobileNotifOpen && !mobileNotifPopup.contains(e.target) && e.target !== mobileNotifBtn) {
+                            mobileNotifPopup.style.display = 'none';
+                            mobileNotifOpen = false;
+                        }
+                    });
+                }
+            });
+            </script>
+
         </div>
     </div>
