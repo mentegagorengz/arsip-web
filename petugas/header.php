@@ -41,6 +41,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
+    <link rel="manifest" href="manifest.json">
 
     <style>
         /* Show navbar on desktop, hide on mobile */

@@ -37,8 +37,17 @@
                 background: #d80027;
                 border-radius: 0px;
                 border: 1px solid #d80027;
-                padding: 60px 0px;
                 color: white;
+                min-height: 100vh;
+                width: 100vw;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
             }
             .banner a {
                 padding: 15px 25px;
@@ -47,6 +56,7 @@
                 transition: all 0.5s;
                 margin-right: 10px;
                 display: inline-block;
+                background: transparent;
             }
             .banner a:hover {
                 text-decoration: none;
@@ -61,23 +71,18 @@
                 margin-bottom: 18px;
             }
             @media (max-width: 991px) {
-                .banner {
-                    padding: 40px 0px;
-                }
                 .banner h1 {
                     font-size: 1.5rem;
                 }
                 .banner p {
                     font-size: 1rem;
                 }
+                .banner img[alt="Logo"] {
+                    height: 180px !important;
+                    max-width: 90vw;
+                }
             }
             @media (max-width: 767px) {
-                .banner {
-                    padding: 25px 0px;
-                }
-                .banner .container {
-                    padding: 0 10px;
-                }
                 .banner h1 {
                     font-size: 1.2rem;
                 }
@@ -90,22 +95,18 @@
                     margin-bottom: 10px;
                 }
                 .banner img[alt="Logo"] {
-                    height: 180px !important;
-                    max-width: 90vw;
+                    height: 120px !important;
                 }
                 .banner .col-lg-6 {
                     margin-bottom: 20px;
                 }
             }
             @media (max-width: 575px) {
-                .banner {
-                    padding: 10px 0px;
-                }
                 .banner h1 {
                     font-size: 1rem;
                 }
                 .banner img[alt="Logo"] {
-                    height: 120px !important;
+                    height: 80px !important;
                 }
                 .banner a {
                     padding: 10px 12px;
@@ -149,16 +150,18 @@
         </nav>
         
 
-        <div class="banner" style="width:100vw;height:100vh;min-height:100vh;position:fixed;top:0;left:0;z-index:1;display:flex;align-items:center;">
-            <div class="row align-items-center w-100" style="margin:0;">
-                <div class="col-lg-6 col-md-6 col-12 text-center mb-4 mb-lg-0 d-flex flex-column justify-content-center align-items-center">
-                    <img style="margin-top:-12px; max-width: 100%; height: auto; background: transparent; box-shadow: none;" src="assets/img/Logo.png" alt="Logo" height="300">
-                    <h1 style="background: transparent;">Selamat Datang di Aplikasi Elektronik Arsip</h1>
-                    <p style="background: transparent;">Aplikasi ini dirancang untuk mengoptimalkan pengelolaan arsip dinamis inaktif dengan fitur pencarian arsip secara cepat beserta laporan arsip</p>
-                    <a href="login.php" style="background: transparent; border: 1px solid #fff; color: #fff;">LOGIN</a>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 text-center d-flex flex-column justify-content-center align-items-center">
-                    <img src="gambar/depan/1.png" style="max-width: 100%; height: auto; background: transparent; box-shadow: none;">
+        <div class="banner d-flex justify-content-center align-items-center">
+            <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+                <div class="row w-100 h-100 justify-content-center align-items-center" style="margin:0;">
+                    <div class="col-lg-6 col-md-8 col-12 d-flex flex-column justify-content-center align-items-center text-center mb-4 mb-lg-0">
+                        <img style="margin-top:-12px; max-width: 80%; height: auto; background: transparent; box-shadow: none;" src="assets/img/Logo.png" alt="Logo" height="220">
+                        <h1 style="background: transparent;">Selamat Datang di Aplikasi Elektronik Arsip</h1>
+                        <p style="background: transparent;">Aplikasi untuk pengelolaan dan pencarian arsip dinamis inaktif.</p>
+                        <a href="login.php" style="background: transparent; border: 1px solid #fff; color: #fff;">LOGIN</a>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-12 d-flex flex-column justify-content-center align-items-center text-center">
+                        <img src="gambar/depan/1.png" style="max-width: 80%; height: auto; background: transparent; box-shadow: none;">
+                    </div>
                 </div>
             </div>
         </div>

@@ -38,6 +38,7 @@ if($_SESSION['role'] != "user"){
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/mobile-responsive.css">
+    <link rel="manifest" href="manifest.json">
     
     <style>
         /* Tampilkan navbar di desktop, sembunyikan di mobile */
