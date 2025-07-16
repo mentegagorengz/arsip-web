@@ -41,7 +41,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
-    <link rel="manifest" href="manifest.json">
 
     <style>
         /* Show navbar on desktop, hide on mobile */
@@ -263,6 +262,40 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         Aplikasi Pengarsipan
                     </h5>
                 </div>
+                <!-- Notifikasi Icon Mobile -->
+                    <div style="position: relative;">
+                        <button id="mobile-notif-btn" style="background: none; border: none; color: white; position: relative; padding: 0;">
+                            <i class="educate-icon educate-bell" style="font-size: 22px;"></i>
+                            <span class="indicator-nt" style="background-color: #fff; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+                        </button>
+                        <!-- Popup Notifikasi Mobile -->
+                        <div id="mobile-notif-popup" style="display: none; position: absolute; right: 20px; top: 32px; width: 320px; max-width: 90vw; background: #fff; color: #333; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border-radius: 8px; z-index: 2000;">
+                            <div style="padding: 12px 16px; border-bottom: 1px solid #eee; background: #8B5C2A;; color: #fff; border-radius: 8px 8px 0 0; font-weight: 600;">Notifikasi</div>
+                            <div style="max-height: 220px; overflow-y: auto; padding: 10px 0;">
+                                <ul style="list-style: none; padding: 0 16px; margin: 0;">
+                                <?php 
+                                $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id ORDER BY riwayat_id DESC LIMIT 5");
+                                if(mysqli_num_rows($arsip) > 0){
+                                    while($p = mysqli_fetch_array($arsip)){
+                                ?>
+                                    <li style="margin-bottom: 10px;">
+                                        <a href="riwayat.php" style="text-decoration: none; color: #333;">
+                                            <div style="font-size: 13px;">
+                                                <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
+                                                <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php }}else{ ?>
+                                    <li><span style="font-size: 13px; color: #888;">Tidak ada notifikasi.</span></li>
+                                <?php } ?>
+                                </ul>
+                            </div>
+                            <div style="padding: 8px 16px; border-top: 1px solid #eee; text-align: right;">
+                                <a href="riwayat.php" style="font-size: 13px; color: #d80027; text-decoration: underline;">Lihat Semua</a>
+                            </div>
+                        </div>
+                    </div>
                 <div class="col-auto">
                     <a href="profil.php" style="color: white; text-decoration: none;">
                         <?php 
@@ -338,7 +371,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <li>
                         <a href="logout.php" style="display: block; padding: 15px 20px; text-decoration: none; color: #333;">
                             <i class="educate-icon educate-pages" style="margin-right: 15px; color: #666;"></i>
-                            Logout
+                            Keluar
                         </a>
                     </li>
                 </ul>
@@ -401,7 +434,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </li>
 
                         <li>
-                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
+                            <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Keluar</span></a>
                         </li>
 
                     </ul>
@@ -463,7 +496,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                                                                         <a href="riwayat.php" style="text-decoration: none; color: #333;">
                                                                             <div style="font-size: 13px;">
                                                                                 <small><i><?php echo date('H:i:s d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small><br>
-                                                                                <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                                                <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
                                                                             </div>
                                                                         </a>
                                                                     </li>

@@ -24,6 +24,15 @@
     </div>
 </div>
 
+<!-- Button Kembali -->
+<div class="container-fluid" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="arsip.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-arrow-left"></i> Kembali</a>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid">
 
     <div class="row">
@@ -34,12 +43,6 @@
                     <h3 class="panel-title">Tambah pengguna</h3>
                 </div>
                 <div class="panel-body">
-
-                    <div class="pull-right">
-                        <a href="user.php" class="btn btn-kategori" style="border-color: #8B5C2A; background-color: #8B5C2A; color: white !important;"><i class="fa fa-arrow-left"></i> Kembali</a>
-                    </div>
-                    <br>
-                    <br>
 
                     <form method="post" action="user_aksi.php" enctype="multipart/form-data">
 

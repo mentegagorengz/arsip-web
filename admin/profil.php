@@ -34,7 +34,7 @@
 </div>
 
 <div class="product-sales-area mg-tb-30">
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="row">
             <div class="col-lg-3">
                 <?php 
@@ -42,8 +42,7 @@
                 $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
                 $s = mysqli_fetch_assoc($saya);
                 ?>
-                <div class="single-cards-item">
-                    
+                <div class="single-cards-item" style="margin-bottom: 20px;">
                     <div class="profile-card">
                     <?php 
                     $id = $_SESSION['id'];
@@ -99,7 +98,7 @@
                                 <small>Kosongkan jika tidak ingin mengubah foto.</small>
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Simpan">
+                                <input type="submit" class="btn btn-primary" value="Simpan" style="color: white !important;">
                             </div>
                         </form>
                     </div>

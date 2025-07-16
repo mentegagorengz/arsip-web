@@ -130,7 +130,7 @@
                                     <a class="btn btn-default" href="arsip_process.php?status=APPROVED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-check"></i></a>
                                     <a class="btn btn-default" href="arsip_process.php?status=REJECTED&id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-times"></i></a>
                                     <a " class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>"><i class="fa fa-download"></i></a>
-                                    <a " href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-search"></i> Pratinjau</a>
+                                    <a " href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-search"></i></a>
                                     <button type="button" class="btn btn-sm" style="background-color: #8B5C2A; color: white;" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
                                         <i class="fa fa-trash"></i>
                                     </button>

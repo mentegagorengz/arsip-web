@@ -4,11 +4,11 @@ session_start();
 date_default_timezone_set('Asia/Jakarta');
 
 $waktu = date('Y-m-d H:i:s'); 
-$petugas = $_SESSION['id'];
+$petugas = $_POST['petugas'];
 $user_id = $_SESSION['id']; // For user version, petugas and user_id are the same
 $kode  = $_POST['kode'];
 $nama  = $_POST['nama'];
-$tipe = $_POST["tipe"]; // Add tipe field
+$tipe = $_POST["tipe"];
 
 $rand = rand();
 

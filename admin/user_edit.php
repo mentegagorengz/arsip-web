@@ -25,6 +25,15 @@
     </div>
 </div>
 
+<!-- Button Kembali -->
+<div class="container-fluid" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="arsip.php" class="btn btn-sm btn-kategori"><i class="fa fa-arrow-left"></i> Kembali</a>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid">
 
 
@@ -36,11 +45,7 @@
                     <h3 class="panel-title">Edit User</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="pull-right">            
-                        <a href="user.php" class="btn btn-kategori"><i class="fa fa-arrow-left"></i> Kembali</a>
-                    </div>
-                    <br>
-                    <br>
+                    
 
                     <?php 
                     $id = $_GET['id'];              

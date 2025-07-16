@@ -43,7 +43,7 @@
                 $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
                 $s = mysqli_fetch_assoc($saya);
                 ?>
-                <div class="single-cards-item">
+                <div class="single-cards-item" style="margin-bottom: 20px;">
                     
                     <div class="profile-card">
                     <?php 

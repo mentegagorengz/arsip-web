@@ -24,9 +24,16 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<!-- Button Kembali -->
+<div class="container-fluid" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-lg-12 style">
+            <a href="arsip.php" class="btn btn-sm" style="background-color: #404040; color: white;"><i class="fa fa-arrow-left" style="color: white !important;"></i> Kembali</a>
+        </div>
+    </div>
+</div>
 
-
+<div class="container-fluid" style="margin-top: 20px; margin-bottom: 20px;">
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
             <div class="panel panel">
@@ -35,13 +42,6 @@
                     <h3 class="panel-title">Unggah arsip</h3>
                 </div>
                 <div class="panel-body">
-
-                    <div class="pull-right">
-                        <a href="arsip.php" class="btn btn-sm" style="background-color: #404040; color: white;"><i class="fa fa-arrow-left" style="color: white !important;"></i> Kembali</a>
-                    </div>
-
-                    <br>
-                    <br>
 
                     <form method="post" action="arsip_aksi.php" enctype="multipart/form-data">
 
@@ -73,6 +73,29 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Petugas</label>
+                            <select class="form-control" name="petugas" required="required">
+                                <option value="">Pilih Petugas</option>
+                                <?php
+                                $petugas = mysqli_query($koneksi, "SELECT * FROM user WHERE user_role='petugas'");
+                                while ($p = mysqli_fetch_array($petugas)) {
+                                ?>
+                                    <option value="<?php echo $p['user_id']; ?>"><?php echo $p['user_nama']; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipe Surat</label>
+                            <select class="form-control" name="tipe" required="required">
+                                <option value="SURAT_MASUK">Surat Masuk</option>
+                                <option value="SURAT_KELUAR">Surat Keluar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label>Keterangan</label>
                             <textarea class="form-control" name="keterangan" required="required"></textarea>
                         </div>
@@ -93,8 +116,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 
