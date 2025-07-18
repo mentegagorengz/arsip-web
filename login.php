@@ -1,3 +1,34 @@
+<?php
+session_start();
+include 'koneksi.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+    $login = mysqli_query($koneksi, "SELECT * FROM user WHERE user_username='$username' AND user_password='$password'");
+    $cek = mysqli_num_rows($login);
+    if ($cek > 0) {
+        $data = mysqli_fetch_assoc($login);
+        $_SESSION['id'] = $data['user_id'];
+        $_SESSION['nama'] = $data['user_nama'];
+        $_SESSION['username'] = $data['user_username'];
+        $_SESSION['role'] = $data['user_role'];
+        if ($_SESSION['role'] == "admin") {
+            header("Location: admin/");
+            exit();
+        } else if ($_SESSION['role'] == "petugas") {
+            header("Location: petugas/");
+            exit();
+        } else {
+            header("Location: user/");
+            exit();
+        }
+    } else {
+        header("Location: login.php?alert=gagal");
+        exit();
+    }
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -28,85 +59,104 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/login-mobile.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d80027"/>
+
     <style>
+        /* Desktop Styles */
+        .login-logo img {
+            height: 60px !important;
+            margin-top: -8px !important;
+        }
+
+        .login-logo b {
+            font-size: 22px;
+        }
+
+        .login1 h4 {
+            font-size: 24px;
+            margin: 12px 0;
+        }
+
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .error-pagewrap {
                 padding: 10px;
             }
-            
+
             .content-error {
                 margin: 0;
                 padding: 20px 15px;
             }
-            
+
             .content-error > div {
                 padding: 15px !important;
                 margin: 10px 0;
             }
-            
+
             .login-logo img {
                 height: 40px !important;
                 margin-top: -8px !important;
             }
-            
+
             .login-logo b {
                 font-size: 18px;
             }
-            
+
             .login1 h4 {
                 font-size: 20px;
                 margin: 10px 0;
             }
-            
+
             .form-group {
                 margin-bottom: 15px;
             }
-            
+
             .form-login {
                 font-size: 14px;
                 padding: 12px 40px 12px 15px;
             }
-            
+
             .icon {
                 font-size: 16px;
             }
-            
+
             .loginbtn {
                 padding: 12px;
                 font-size: 16px;
             }
-            
+
             .alert {
                 font-size: 14px;
                 padding: 10px;
                 margin-bottom: 15px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .content-error > div {
                 padding: 10px !important;
                 margin: 5px 0;
             }
-            
+
             .login-logo img {
                 height: 35px !important;
             }
-            
+
             .login-logo b {
                 font-size: 16px;
             }
-            
+
             .login1 h4 {
                 font-size: 18px;
             }
-            
+
             .form-login {
                 font-size: 13px;
                 padding: 10px 35px 10px 12px;
             }
-            
+
             .loginbtn {
                 padding: 10px;
                 font-size: 14px;
@@ -117,15 +167,15 @@
 </head>
 
 <body>
-    <div class="error-pagewrap">
+    <div class="error-pagewrap" style=" height: 100vh;">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                
+
                 <p class="text-white bg-dark"></p>
 
             </div>
             <div class="content-error .bg-danger">
-                <?php 
+                <?php
                 // pesan notifikasi
 
                 if(isset($_GET['alert'])){
@@ -151,7 +201,7 @@
                         <br>
                         <br>
 
-                        <form action="periksa_login.php" method="POST" id="loginForm">
+                        <form method="POST" action="login.php" id="loginForm">
                             <div class="form-group">
                                 <input type="text" placeholder="nama pengguna" title="Silakan masukkan nama pengguna Anda" required="required" autocomplete="off" name="username" id="username" class="form-login">
                               <div class="icon"><i style="color:#fff" class="bx bx-user"></i></div>
@@ -160,24 +210,13 @@
                                 <input type="password" title="Silakan masukkan kata sandi Anda" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-login">
                                 <div class="icon"><i style="color:#fff" class="bx bx-lock"></i></div>
                             </div>
-                            
+
                             <input type="submit" class="btn btn-success btn-block loginbtn" value="Masuk">
                         </form>
-
-                        <!-- <br>
-                        <div class="text-center">
-                            <a href="register.php" style="color: #fff; text-decoration: none;">
-                                <i class="bx bx-user-plus"></i> Buat Akun Baru
-                            </a>
                         </div>
-                        <br> -->
-                
-                </div>
-
                 <a href="index.php">Kembali</a>
             </div>
-          
-        </div>   
+        </div>
     </div>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -196,9 +235,19 @@
     <script src="assets/js/icheck/icheck-active.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
-	<body class="hold-transition login-page" style="background-image:url(gambar/depan/bg.jpg)
-no-repeat center center fixed; background-size: cover;
- -webkit-background-size: cover; 
- -moz-background-size: cover; -o-background-size: cover;">
-	</body>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+
+</body>
 </html>
