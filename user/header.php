@@ -242,7 +242,7 @@ if($_SESSION['role'] != "user"){
     <!-- End Left menu area -->
 
     <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
+    <div class="all-content-wrapper" style="overflow-y: auto; height: 100vh;">
         <div class="header-advance-area">
             <div class="navbar navbar-light desktop-navbar" style="background-color: #404040;">
             <div class="container-fluid">

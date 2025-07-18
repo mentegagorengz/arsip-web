@@ -243,6 +243,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 
 <body>
+    <div></div>
     <!-- Mobile Menu Button -->
     <div class="mobile-menu-area" style="background-color: #8B5C2A;">
         <div class="container-fluid" style="padding: 10px 15px;">
@@ -410,7 +411,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </nav>
     </div>
     
-    <div class="all-content-wrapper">       
+    <div class="all-content-wrapper" style="overflow-y: auto; height: 100vh;">       
         <div class="header-advance-area">
             <div class="navbar navbar-light desktop-navbar" style="background-color: #8B5C2A;">
                 <div class="container-fluid">

@@ -25,13 +25,13 @@
 </div>
 
 <!-- Button Kembali -->
-<div class="container-fluid" style="margin-bottom: 20px;">
+<!-- <div class="container-fluid" style="margin-bottom: 20px;">
     <div class="row">
         <div class="col-lg-12">
             <a href="arsip.php" class="btn btn-sm" style="background-color: #8B5C2A; color: white;"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="container-fluid">
     <div class="row">
@@ -63,10 +63,13 @@
     </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
+<!-- div kosong -->
+<div style="padding: 100px;">
+    <br>
+    <br>
+    <br>
+</div>
+
 <br>
 <br>
 <br>

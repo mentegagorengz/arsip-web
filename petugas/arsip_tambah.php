@@ -48,16 +48,14 @@
                     <form method="post" action="arsip_aksi.php" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label>Pengguna <?php if(isset($_GET['tipe'])){
-                                if($_GET["tipe"] == "SURAT_MASUK") echo "Pengirim";
-                                else echo "Penerima";
-                            }?></label>
+                            <label>Pengguna</label>
                             <select type="text" class="form-control" name="user_id" required="required">
                                 <?php
-                                $users = mysqli_query($koneksi, "SELECT * FROM user where user_role='user'");
+                                $users = mysqli_query($koneksi, "SELECT * FROM user WHERE user_role='user' OR user_role='petugas'");
                                 while ($k = mysqli_fetch_array($users)) {
                                     ?>
-                                    <option value="<?php echo $k['user_id']; ?>"><?php echo $k['user_nama']; ?>
+                                    <option value="<?php echo $k['user_id']; ?>">
+                                        <?php echo $k['user_nama'] . " (" . ucfirst($k['user_role']) . ")"; ?>
                                     </option>
                                     <?php
                                 }
